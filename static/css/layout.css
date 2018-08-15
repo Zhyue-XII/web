@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@media (max-width: 768px) {
+    .nav-logo,.nav-tel{
+        display: none;
+    }
+    .nav-menu{
+        background: #f54e05;
+        color: white;
+        position: relative;
+        width: 100% ;
+        transition: all 0.8s;
+    }
+    .nav-icon{
+        position: absolute;
+        top: 0;
+        right: 20px;
+        background: none;
+        border: none;
+        outline: none;
+    }
+    .nav-menu ul li{
+        display: block;
+    }
+    nav ul a:hover{
+        color: white;
+        text-decoration: none;
+    }
+    .container{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .contact-us{text-align: center}
+}
+@media (min-width: 768px) and (max-width: 991px){
+
+}
+@media (min-width: 991px) {
+    .nav-menu{width: 75%}
+}
+
+.nav {
+    background: #22282d;
+    overflow: hidden;
+    height: 60px;
+    transition: all 0.8s;
+    position: relative;
+    z-index: 3;
+}
+.nav-block div:first-child,.nav-block div:nth-child(2){float: left}
+.nav-block div:last-child{float: right;height: 60px}
+.nav-logo img{width: 120px;}
+.nav-menu{line-height: 50px}
+
+nav ul,.nav-tel{
+    list-style: none;
+    color: white;
+}
+nav ul li{
+    display: inline-block;
+}
+.nav-menu{
+    text-align: center;
+}
+.nav-tel{
+    text-align: right;
+    line-height: 50px;
+}
+ul a{
+    color: white;
+    padding: 10px 20px;
+}
+.cm-title,ul a:hover{
+    color: #f54e05;
+}
+
+.my-btn{
+    background: #f54e05;
+    width: 160px;
+    height: 45px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    color: white;
+}
+input,textarea{
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: none !important;
+}
+form,.frm-img{
+    margin: 100px 0 80px 0;
+}
+
+.footer{
+    min-height: 200px;
+    background: #32383d;
+    color: #dcdcdc;
+    font-size: 16px;
+}

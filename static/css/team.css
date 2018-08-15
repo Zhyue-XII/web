@@ -1,0 +1,76 @@
+.team-title{
+    background-image: url("../img/bg2.jpg");
+    background-size: cover;
+}
+
+.team-title-text{
+    font-size: 35px;
+    font-family: 微软雅黑;
+    padding: 10% 0;
+}
+
+.team-title-text p:nth-child(2){
+    font-size: 15px;
+    color: grey;
+}
+
+.team-desc{background-color: white;min-height: 200px}
+
+.team-desc-img img{
+    width: 100%;
+    margin-top: 40px;
+    transition: all .8s;
+}
+.team-desc-text{
+    padding: 5%;
+    font-family: 微软雅黑;
+}
+.team-desc-text p{
+    color: black;
+}
+.team-desc-text span,.our-team-text span,.pic-block span{
+    color: grey;
+}
+
+.our-team{
+    background-color: #f2f2f2;
+}
+
+.our-team-text{
+        padding: 5% 0 3% 0;
+}
+.our-team-text p:first-child{
+    font-size: 32px;
+    letter-spacing: 2px;
+}
+.our-team-text p:nth-child(2){
+    width: 5%;
+    height: 1px;
+    border: 1px solid #f54e05;
+    margin: 10px auto;
+}
+.our-team-pic{padding-bottom: 5%}
+.pic-block{
+    display: inline-block;
+    margin: 0 3%;
+    max-width: 200px;
+}
+.pic-block img{
+    border-radius: 50%;
+}
+.pic-block p{
+    font-size: 15px;
+    color: gray;
+    margin-top: 10%;
+}
+
+@media (max-width: 768px) {
+    .team-title-text p:first-child,.our-team-text p{ font-size: 20px !important;}
+    .pic-block img{width: 40% !important;}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .team-title-text p:first-child,.our-team-text p{ font-size: 25px !important;}
+    .pic-block img{width: 60% !important;}
+    #team-img{width: 80% !important;}
+}

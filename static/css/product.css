@@ -1,0 +1,59 @@
+.p-title-bg{
+    background-image: url("../img/bg3.png");
+    background-size: cover;
+}
+
+.p-title-text{
+    font-family: 微软雅黑;
+    font-size: 35px;
+    color: #333;
+    padding: 10% 0;
+}
+.p-title-text p:nth-child(2){
+    color: white;
+    font-size: 15px;
+}
+
+.p-img1 img{
+    width: 100%;
+    margin: 30% 0;
+}
+.p-desc-block{
+    padding: 4%;
+    margin-top: 5%;
+}
+.p-name{
+    font-size: 25px;
+    font-family: 微软雅黑;
+    color: #f54e05;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid gainsboro;
+}
+.p-desc{
+    font-family: 微软雅黑;
+    font-size: 15px;
+    color: grey;
+}
+.try-block span:nth-child(2){margin: 4% 0}
+.try-block span{
+    color: #808080;
+    font-size: 15px;
+    margin-top: 5%;
+}
+
+@media (max-width: 768px) {
+    .font-style{ font-size: 20px !important;}
+    .p-img1 img{ margin: 10% 0 !important;}
+    .try-block span{display: block;text-align: center !important;}
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .font-style{ font-size: 25px !important;}
+    .p-img1 img{width: 60% !important;margin: 10% 0 !important;}
+    .try-block span{display: block;text-align: center !important;}
+}
+
+@media (min-width: 991px) {
+
+}

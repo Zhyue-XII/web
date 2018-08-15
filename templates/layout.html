@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Condetic</title>
+    <link href="{% static 'bootstrap-dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/layout.css' %}" rel="stylesheet">
+    <script src="{% static 'js/jquery-3.2.0.min.js' %}"></script>
+    <script src="{% static 'bootstrap-dist/js/bootstrap.min.js' %}"></script>
+    {% block styles %}{% endblock %}
+    {% block script %}{% endblock %}
+</head>
+<body>
+<div class="nav" id="nav">
+    <div class="container">
+        <nav class="nav-block">
+            <div class="nav-logo">
+                <a href="#">
+                    <img src="{% static 'img/logo1.png' %}" alt="">
+                </a>
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="http://127.0.0.1:8000/">首页</a></li>
+                    <li><a href="http://127.0.0.1:8000/product">产品</a></li>
+                    <li><a href="http://127.0.0.1:8000/team">关于我们</a></li>
+                    <li><a href="http://127.0.0.1:8000/contact">联系我们</a></li>
+                    <li><a href="#">论坛</a></li>
+                </ul>
+                <button id="nav-icon" class="nav-icon"><span class="glyphicon glyphicon-align-justify"></span></button>
+            </div>
+            <div class="nav-tel">
+                <span>0294-52612542</span>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="main-page">
+    {% block content %}{% endblock %}
+</div>
+
+<div class="footer">
+    <div style="padding: 50px 0 30px 0">
+        <div class="container">
+            <div class="about-us col-lg-4 col-md-4 col-sm-4">
+                <p style="font-size: 18px"> <strong>关于我们</strong></p><br>
+                <p>怲怳怴怵怶怷怸怹怺怼悙怿？ 恀恂恃恄恅忨忩忪忬忭忮忯，恒恇恈恌恍恎恏。恑恒恔恖恘恙恛恜恝恞恠恡恦， 恧恫恬恮恰恱恲恴恷恹恲恴恲恴怳怴怵怶怷怸怹怺怼悙怿？恀恂恃恄恅忨忩忪忬忭忮忯，恒恇恈恌恍恎恏。 恑恒恔恖恘</p>
+            </div>
+            <div class="our-service col-lg-5 col-md-5 col-sm-4" style="text-align: center">
+                <p style="font-size: 18px"> <strong>我们的服务</strong></p><br>
+                <p>屠宰加工软件</p>
+                <p>中央厨房</p>
+                <p>食品安全追溯</p>
+            </div>
+            <div class="contact-us col-lg-3 col-md-3 col-sm-4">
+                <p style="font-size: 18px"><strong>联系我们</strong></p><br>
+                <p><span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;电话:0295-4562312</p>
+                <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;邮箱:1552562622@qq.com</p>
+                <p><span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;网址:www.dangditai.net</p>
+                <p><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;地址:西安市高新区唐延南路</p>
+            </div>
+            <div class="remarks"></div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+
+</script>
+<script src="{% static 'js/index.js' %}"></script>
+<script>
+    var icon = document.getElementById('nav-icon')
+    var nav = document.getElementById('nav')
+    var count = 1;
+    icon.onclick = function () {
+        count ++;
+        if (count%2 === 0) {
+            nav.style.overflow = 'visible';
+        }else {
+            nav.style.overflow = 'hidden'
+        }
+    }
+</script>
+{% block scripts %}{% endblock %}
+</html>

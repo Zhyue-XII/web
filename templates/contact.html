@@ -1,0 +1,83 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+{% block script %}
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=966f62f3be15f23cf33f02f6ed3a5e08"></script>
+{% endblock %}
+{% block content %}
+    <div class="map-block">
+        <div id="container" style="min-height: 500px"></div>
+    </div>
+    <div class="contact-block">
+        <div class="container">
+            <form action="#" class="col-lg-6 col-md-6">
+                <div class="form-group col-lg-6">
+                    <label for="name" class="control-label" style="color: gainsboro"> 姓名:</label>
+                    <div class="col-lg-12" style="padding-left: 0">
+                        <input class="form-control" type="text" name="name" id="name" value="" placeholder="请输入姓名...">
+                    </div>
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label for="tel" class="control-label" style="color: gainsboro">联系电话:</label>
+                    <div class="col-lg-12" style="padding-left: 0">
+                        <input class="form-control" type="text" name="tel" id="tel" value="" placeholder="请输入电话...">
+                    </div>
+                </div>
+
+                <div class="form-group col-lg-12">
+                    <label for="email" class="control-label" style="color: gainsboro">邮箱:</label>
+                    <div class="col-lg-12" style="padding-left: 0">
+                        <input class="form-control" type="email" name="email" id="email" value=""
+                               placeholder="请输入邮箱...">
+                    </div>
+                </div>
+
+                <div class="form-group col-lg-12">
+                    <label for="remark" class="control-label" style="color: gainsboro">备注</label>
+                    <div class="col-lg-12" style="padding-left: 0">
+                        <textarea class="form-control" name="remark" id="remark" value=""
+                                  placeholder="请输入备注..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group col-lg-12">
+                    <button class="my-btn submit-btn" style="border-radius: 0 ">联系我们</button>
+                </div>
+
+            </form>
+            <div class="contact-desc col-lg-6 col-lg-6">
+                <p>联系我们</p>
+                <p>当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式，无论您是普通互
+                    联网用户 还是专业网站制作人员都能使用起飞页设计出最具专业水准的网站</p>
+                <br>
+                <p>工作时间:9:00 -- 18:00</p>
+                <p>工作日:周一至周五，休息日:周六，周日</p>
+                <p>125622254@qq.com</p>
+                <p>13256214568</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+       var map = new AMap.Map('container', {
+            resizeEnable: true,
+            zoom:12,
+            center: [108.885977,34.185422 ]
+        });
+
+       // 创建一个 Marker 实例：
+        var marker = new AMap.Marker({
+            position: new AMap.LngLat(108.885977,34.185422),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
+            title: '康迪泰'
+        });
+
+        // 将创建的点标记添加到已有的地图实例：
+        map.add(marker);
+    </script>
+{% endblock %}
+{% block scripts %}
+{% endblock %}
