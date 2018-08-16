@@ -1,5 +1,3 @@
-/*nav style*/
-
 @media (max-width: 768px) {
     /*main-page*/
     .mo-fang{
@@ -100,6 +98,11 @@
     width: 90%;
     transform:rotate(0deg);
     transition:ease-out 0.8s;
+}
+.mo-title{
+    opacity: 0;
+    transform: scale(0) ;
+    transition: all .8s;
 }
 
 .mo-title p{

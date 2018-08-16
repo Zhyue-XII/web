@@ -2,8 +2,7 @@ $('.carousel').carousel({  interval: 3000})
 
 $(function () {
     $("#mo-fang").css({"transform":"rotate(360deg)"})
-    // $("#title-text").css({"transform":"translate(1000px,0)"})
-    $(".container-service").css({"display":"none"})
+    $("#mo-title").css({"margin-top":"30px","opacity":"1","transform":"scale(1)"})
     $("#first").css({background:'#f54e058c'})
 })
 
