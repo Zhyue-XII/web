@@ -11,6 +11,7 @@
     .mo-title p{
         text-align: center !important;
     }
+    .mo-title a{margin: 0 auto}
     .mo-title span:nth-child(2){font-size: 15px !important;}
     .wu-control span{
         display: block;
@@ -47,6 +48,9 @@
         width: 100% !important;
         text-align: center !important;
         margin-bottom: 20px;
+    }
+    .cm-pic img{
+        width: 30% !important;
     }
     .frm-img{
         display: none;
@@ -174,10 +178,10 @@
     border-top: 2px solid gainsboro;
     min-height: 300px;
 }
-.cm-pic{width: 30% !important;}
-.cm-text{width: 70% !important;}
+.cm-pic{width: 30%}
+.cm-text{width: 70%}
 .cm-pic img{
-    width: 60% !important;
+    width: 60%;
     border-radius: 100%;
 }
 .cm-control button{

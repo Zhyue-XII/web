@@ -76,6 +76,13 @@ nav ul li{
     text-align: right;
     line-height: 50px;
 }
+.nav-tel img{
+    width: 30px;
+}
+.nav-tel span{
+    font-family: Gabriola;
+    font-size: 25px;
+}
 ul a{
     color: white;
     padding: 10px 20px;
