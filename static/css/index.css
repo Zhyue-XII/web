@@ -3,17 +3,15 @@
     .mo-fang{
         display: none;
     }
-    .mo-title{
-        height: 460px;
-    }
     .dp-block-text{
         width: 95%;
         margin:2%;
         display: inline-block;
     }
-    #title-text{
+    .mo-title p{
         text-align: center !important;
     }
+    .mo-title span:nth-child(2){font-size: 15px !important;}
     .wu-control span{
         display: block;
         margin: 10px 0;
@@ -26,12 +24,10 @@
      .frm-img{display: none}
      .about-us{text-align: center}
      .contact-us{text-align: center !important;}
+
 }
 @media (min-width: 768px) and (max-width: 991px) {
     /*mian-page*/
-    .bg-container{
-        height: 460px;
-    }
     .mo-fang{
         display: none;
     }
@@ -60,14 +56,6 @@
 }
 @media (min-width: 991px) {
     /*main-page*/
-    .bg-container{
-        height: 460px;
-    }
-    .mo-fang{
-        position: relative;
-        top: 60px;
-        right: 40px;
-    }
     .dp-block-text{
         width: 25%;
         margin:2%;
@@ -76,38 +64,30 @@
     .wu-control{
         min-width: 715px;
     }
+    .mo-fang{text-align: center}
 }
 
 /*main-page*/
 .carousel {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    z-index: -1;
-}
-.item{
-    height: 640px;
-}
-.item img{
-
-}
-.main-page{
     background: rgba(51,60,63,0.7);
 }
-#mo-fang{
-    width: 90%;
-    transform:rotate(0deg);
-    transition:ease-out 0.8s;
+.carousel-inner{z-index: -2}
+.item img{min-height: 550px}
+
+.title-block{
+    overflow: hidden;
+    padding: 7% 0;
 }
 .mo-title{
     opacity: 0;
     transform: scale(0) ;
     transition: all .8s;
 }
-
+#mo-fang{
+    opacity: 0;
+    transition:all 0.8s
+}
 .mo-title p{
-    margin-top: 100px;
-    /*margin-left: -1000px;*/
     transition: all 0.8s;
 }
 .mo-title span{
@@ -122,6 +102,14 @@
     font-size: 20px;
     margin-bottom: 40px;
 }
+.mo-title a{
+    display: block;
+    line-height: 45px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
 
 .service{
     min-height: 286px;
@@ -131,7 +119,8 @@
     text-align: center;
     padding: 60px 0;
 }
-.bg-service p{color: white;}
+.bg-service{ transform: scale(0);transition: all .8s;opacity: 0}
+.bg-service p{color: white;margin-top: 2%}
 .bg-service span,.dp-title span{color: gray}
 .dp-title p{color: black;padding: 60px 0 30px 0}
 .dp-block-text{
@@ -204,5 +193,4 @@
     width: 110px
 }
 
-
-
+.try-it{padding: 5% 0}

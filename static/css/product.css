@@ -2,7 +2,12 @@
     background-image: url("../img/bg3.png");
     background-size: cover;
 }
-
+.p-bg{
+    padding-top: 100px;
+    opacity: 0;
+    transition: all 0.8s;
+    overflow: hidden;
+}
 .p-title-text{
     font-family: 微软雅黑;
     font-size: 35px;

@@ -4,8 +4,11 @@
 
 .contact-desc{
     color: gainsboro;
-    margin: 10% 0;
 }
 .contact-desc p:first-child{
     font-size: 22px;
+}
+#ct-us{
+    padding-bottom:5% ;
+    transition: all .8s;
 }

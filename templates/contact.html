@@ -8,10 +8,10 @@
 {% endblock %}
 {% block content %}
     <div class="map-block">
-        <div id="container" style="min-height: 500px"></div>
+        <div id="container" style="min-height: 600px"></div>
     </div>
     <div class="contact-block">
-        <div class="container">
+        <div class="container" id="ct-us">
             <form action="#" class="col-lg-6 col-md-6">
                 <div class="form-group col-lg-6">
                     <label for="name" class="control-label" style="color: gainsboro"> 姓名:</label>
@@ -24,6 +24,14 @@
                     <label for="tel" class="control-label" style="color: gainsboro">联系电话:</label>
                     <div class="col-lg-12" style="padding-left: 0">
                         <input class="form-control" type="text" name="tel" id="tel" value="" placeholder="请输入电话...">
+                    </div>
+                </div>
+
+                <div class="form-group col-lg-12">
+                    <label for="email" class="control-label" style="color: gainsboro">公司名称:</label>
+                    <div class="col-lg-12" style="padding-left: 0">
+                        <input class="form-control" type="text" name="email" id="email" value=""
+                               placeholder="请输入邮箱...">
                     </div>
                 </div>
 
@@ -46,7 +54,6 @@
                 <div class="form-group col-lg-12">
                     <button class="my-btn submit-btn" style="border-radius: 0 ">联系我们</button>
                 </div>
-
             </form>
             <div class="contact-desc col-lg-6 col-lg-6">
                 <p>联系我们</p>
@@ -77,6 +84,10 @@
 
         // 将创建的点标记添加到已有的地图实例：
         map.add(marker);
+
+       $(function () {
+           $("#ct-us").css({"padding-top":"5%"})
+       })
     </script>
 {% endblock %}
 {% block scripts %}
