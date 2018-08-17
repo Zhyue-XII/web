@@ -1,17 +1,89 @@
 {% extends 'layout.html' %}
 {% load static %}
-{% block styles %}
-    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% block  styles%}
+    <link rel="stylesheet" href="{% static 'css/about.css'  %}">
+    <link rel="stylesheet" href="{% static 'css/product.css'  %}">
 {% endblock %}
 {% block script %}
     <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=966f62f3be15f23cf33f02f6ed3a5e08"></script>
 {% endblock %}
 {% block content %}
-    <div class="map-block">
-        <div id="container" style="min-height: 600px"></div>
+    <div class="team-title">
+        <div class="team-title-bg" style="background-color: rgba(255,255,255,0.7)">
+            <div class="container" style="text-align: center">
+                <div class="team-title-text">
+                    <p>关于 <span style="color: #f54e05">我们</span></p>
+                    <p>応损捠捡换换攴朰朲朳枛朸桹，夲夳夵壱売壳圢圤圦圧圩圪囡団囤囥咍咎壱売壳圢圤圥圦応损捠捡换</p>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div class="team-desc">
+        <div class="container" style="padding: 5% 0">
+            <div class="team-desc-img col-lg-5">
+                <img id="team-img" src="{% static 'img/12.jpg' %}" alt="">
+            </div>
+            <div class="team-desc-text col-lg-7">
+                <p>企业概况</p><br>
+                <span>応损捠捡换换攴朰朲朳枛朸桹，夲夳夵壱売壳圢圤圦圧圩圪囡団囤囥咍咎壱売壳圢圤圥圦応损捠捡换応损捠捡换
+                    换攴朰朲朳枛朸桹，夲夳夵壱売壳圢圤圦圧圩圪囡団囤囥咍咎壱売壳圢圤圥圦応损捠捡换</span><br><br>
+                <p>企业愿景</p><br>
+                <span>応损捠捡换换攴朰朲朳枛朸桹，夲夳夵壱売壳圢圤圦圧圩圪囡団囤囥咍咎壱売壳圢圤圥圦応损捠捡换応损捠捡换
+                    换攴朰朲朳枛朸桹，夲夳夵壱売壳圢圤圦圧圩圪囡団囤囥咍咎壱売壳圢圤圥圦応损捠捡换</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="our-team" style="text-align: center">
+        <div class="our-team-text">
+            <p>我们的团队</p>
+            <p></p>
+            <span>青年是我们的核心</span>
+        </div>
+
+        <div class="our-team-pic">
+            <div class="pic-block">
+                <img src="{% static 'img/pic1.png' %}" alt="">
+                <p><strong> 量子木 </strong></p>
+                <span> python 工程师，web 工程师 </span>
+            </div>
+            <div class="pic-block">
+                <img src="{% static 'img/pic1.png' %}" alt="">
+                <p><strong> 量子木 </strong></p>
+                <span> python 工程师，web 工程师 </span>
+            </div>
+            <div class="pic-block">
+                <img src="{% static 'img/pic1.png' %}" alt="">
+                <p><strong> 量子木 </strong></p>
+                <span> python 工程师，web 工程师 </span>
+            </div>
+            <div class="pic-block">
+                <img src="{% static 'img/pic1.png' %}" alt="">
+                <p><strong> 量子木 </strong></p>
+                <span> python 工程师，web 工程师 </span>
+            </div>
+        </div>
+    </div>
+
+{#    <div class="try-out">#}
+{#        <div class="t-bg" style="background: #22282d">#}
+{#            <div class="container">#}
+{#                <p class="try-block">#}
+{#                    <span class="col-lg-8">SOFTWARE让应用程序操作更加简单、更高效、更可靠。</span>#}
+{#                    <span class="col-lg-4" style="text-align: right"> <button class="my-btn scale-btn">立即试用</button></span>#}
+{#                </p>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+
     <div class="contact-block">
         <div class="container" id="ct-us">
+            <div class="contact-title">
+                <p class="scale-title" style="color: white">联系我们</p>
+                <p class="underline"></p>
+            </div>
+
             <form action="#" class="col-lg-6 col-md-6">
                 <div class="form-group col-lg-6">
                     <label for="name" class="control-label" style="color: gainsboro"> 姓名:</label>
@@ -56,7 +128,6 @@
                 </div>
             </form>
             <div class="contact-desc col-lg-6 col-lg-6">
-                <p>联系我们</p>
                 <p>当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式，无论您是普通互
                     联网用户 还是专业网站制作人员都能使用起飞页设计出最具专业水准的网站</p>
                 <br>
@@ -67,6 +138,9 @@
             </div>
         </div>
     </div>
+
+    <!-- map container -->
+    <div id="container"  style="min-height: 300px"></div>
 
 
     <script>
@@ -84,11 +158,11 @@
 
         // 将创建的点标记添加到已有的地图实例：
         map.add(marker);
-
-       $(function () {
-           $("#ct-us").css({"padding-top":"5%"})
-       })
     </script>
+
 {% endblock %}
 {% block scripts %}
+    <script>
+        $(function () {$("#team-img").css({"transform":"rotate(360deg)"})})
+    </script>
 {% endblock %}

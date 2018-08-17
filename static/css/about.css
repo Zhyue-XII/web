@@ -43,7 +43,7 @@
     font-size: 32px;
     letter-spacing: 2px;
 }
-.our-team-text p:nth-child(2){
+.our-team-text p:nth-child(2),.underline{
     width: 5%;
     height: 1px;
     border: 1px solid #f54e05;
@@ -62,6 +62,26 @@
     font-size: 15px;
     color: gray;
     margin-top: 10%;
+}
+
+
+.contact-block{
+    background-color: #333333;
+}
+
+.contact-desc{
+    color: gainsboro;
+}
+.contact-desc p:first-child{
+    margin-top: 10%;
+}
+#ct-us{
+    padding-bottom:5% ;
+    transition: all .8s;
+}
+.contact-title{
+    text-align: center;
+    padding: 5% 0;
 }
 
 @media (max-width: 768px) {

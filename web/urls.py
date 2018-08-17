@@ -24,6 +24,6 @@ urlpatterns = [
     # 后台管理系统
     path('', TemplateView.as_view(template_name='index.html')),
     path('product/', TemplateView.as_view(template_name='product.html')),
-    path('team/', TemplateView.as_view(template_name='team.html')),
-    path('contact/', TemplateView.as_view(template_name='contact.html')),
+    path('about/', TemplateView.as_view(template_name='about.html')),
+    path('case/', TemplateView.as_view(template_name='case.html')),
 ]
