@@ -8,7 +8,7 @@
         margin:2%;
         display: inline-block;
     }
-    .mo-title p{
+    .mo-title p,.mo-title div{
         text-align: center !important;
     }
     .mo-title a{margin: 0 auto}
@@ -31,6 +31,9 @@
     /*mian-page*/
     .mo-fang{
         display: none;
+    }
+     .mo-title p,.mo-title div{
+        text-align: center !important;
     }
     .bg-service{
         width: 25% !important;
@@ -61,9 +64,14 @@
 @media (min-width: 991px) {
     /*main-page*/
     .dp-block-text{
-        width: 25%;
+        width: 29%;
         margin:2%;
-        display: inline-block;
+        float: left;
+    }
+    .dp-block-text div{height: 80px}
+    .dp-block-text p{
+        font-size: 20px;
+        margin-top: 5%;
     }
     .wu-control{
         min-width: 715px;
@@ -112,8 +120,9 @@
     color: white;
     text-align: center;
     text-decoration: none;
+    float: left;
 }
-
+.mo-title a:nth-child(2){margin-left: 10px}
 
 .service{
     min-height: 286px;
@@ -125,11 +134,17 @@
 }
 .bg-service{ transform: scale(0);transition: all .8s;opacity: 0}
 .bg-service p{color: white;margin-top: 2%}
-.bg-service span,.dp-title span{color: gray}
+.bg-service span,.dp-title span,.dp-block-text span{color: gray}
 .dp-title p{color: black;padding: 60px 0 30px 0}
 .dp-block-text{
     border: 1px solid #f54e058c;
     border-radius: 30px;
+    padding: 5% 2%;
+}
+.dp-block-text:hover{background: white }
+.dp-block{
+    margin-bottom: 10%;
+    overflow: hidden;
 }
 .description{
     min-height: 300px;

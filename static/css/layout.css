@@ -87,7 +87,7 @@ ul a{
     color: white;
     padding: 10px 20px;
 }
-.cm-title,ul a:hover{
+.cm-title,ul a:hover,.dp-block-text p{
     color: #f54e05;
 }
 
