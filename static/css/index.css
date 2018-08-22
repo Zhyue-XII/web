@@ -25,7 +25,8 @@
      .frm-img{display: none}
      .about-us{text-align: center}
      .contact-us{text-align: center !important;}
-
+     .current-img{padding: 0 20px !important;}
+     .cm-pic{margin-top: 10% !important;}
 }
 @media (min-width: 768px) and (max-width: 991px) {
     /*mian-page*/
@@ -135,7 +136,7 @@
 .bg-service{ transform: scale(0);transition: all .8s;opacity: 0}
 .bg-service p{color: white;margin-top: 2%}
 .bg-service span,.dp-title span,.dp-block-text span{color: gray}
-.dp-title p{color: black;padding: 60px 0 30px 0}
+.dp-title p{color: black;padding: 10% 0 0 0}
 .dp-block-text{
     border: 1px solid #f54e058c;
     border-radius: 30px;
@@ -177,6 +178,10 @@
 .wu-text,.img-box{
     width: 50%;
     float: left;
+}
+@font-face {
+    font-family: 微软雅黑;
+    src: url("../fonts/微软雅黑.ttf");
 }
 .wu-text{
     text-align: left;

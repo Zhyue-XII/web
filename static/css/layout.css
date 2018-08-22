@@ -79,8 +79,12 @@ nav ul li{
 .nav-tel img{
     width: 30px;
 }
+@font-face {
+    font-family: 'Ga';
+    src: url("../fonts/gabriola.ttf");
+}
 .nav-tel span{
-    font-family: Gabriola;
+    font-family: Ga;
     font-size: 25px;
 }
 ul a{
