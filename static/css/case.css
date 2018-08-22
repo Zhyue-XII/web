@@ -1,0 +1,56 @@
+.case-title{
+    background-image: url("../img/bg3.jpg");
+    background-size: cover;
+}
+
+.case-title-text{
+    padding: 10% 0;
+}
+.case-block{
+    background: #d8d8d8;
+    /*padding: 1% 0 5% 0;*/
+}
+.bg-color{
+    background: #eee;
+}
+
+
+
+
+
+.item{
+    min-height: 500px;
+    padding-top: 5%;
+}
+.underline {
+    width: 5%;
+    height: 1px;
+    border: 1px solid #f54e05;
+    margin: 0 auto;
+}
+.carousel-control.left,.carousel-control.right {
+    background-image: none !important;
+}
+.carousel-control{
+ width: 5% !important;
+}
+.carousel-indicators .active{
+    background: #f54e05;
+}
+
+@media (max-width:768px ){
+    .item p:first-child{
+        font-size: 20px;
+    }
+}
+
+@media (min-width:768px ) and (max-width: 991px){
+    .item p:first-child{
+        font-size: 25px;
+    }
+}
+@media (min-width: 991px) {
+    .item p:first-child{
+        font-size: 30px;
+    }
+}
