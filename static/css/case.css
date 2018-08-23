@@ -45,8 +45,8 @@
 }
 .btn-icon{
     background: gainsboro;
-    width: 50px !important;
-    height: 50px !important;
+    width: 45px !important;
+    height: 45px !important;
     text-align: center;
     line-height: 50px;
 }
@@ -84,11 +84,11 @@
         text-align: center;
     }
     .carousel-control{
-        top: 125px;
+        top: 140px;
         left: 641px;
     }
     .btn-icon{
-        left: 15px;
+        left: 10px;
     }
     .item button{
         position: absolute;
@@ -103,11 +103,11 @@
         color: #b2e567;
     }
     .carousel-control{
-        top: 190px;
+        top: 200px;
         left: 385px;
     }
     .btn-icon{
-        left: -444px;
+        left: -449px;
     }
     .item button{
         position: absolute;
@@ -121,11 +121,11 @@
         text-align: center;
     }
     .carousel-control{
-        top: 250px;
-        left: 465px;
+        top: 260px;
+        left: 480px;
     }
     .btn-icon{
-        left: -550px;
+        left: -540px;
     }
     .item button{
         position: absolute;
