@@ -11,47 +11,65 @@
         <div class="container" style="text-align: center">
             <div class="case-title-text">
                 <p class="scale-title">我们的 <span style="color: #f54e05">案例</span></p>
-                <p>応损捠捡换换攴朰朲朳枛朸桹，夲夳夵壱売壳圢圤圦圧圩圪囡団囤囥咍咎壱売壳圢圤圥圦応损捠捡换</p>
+                <p>応损捠捡换换攴朰朲朳枛朸桹</p>
             </div>
         </div>
     </div>
 
     <div class="case-block">
-{#        <div class="container bg-color">#}
-            <div id="myCarousel" class="carousel slide bg-color">
-                <!-- 轮播（Carousel）指标 -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
-                <!-- 轮播（Carousel）项目 -->
+        <div class="container">
+            <p class="pro-desc">案例介绍</p>
+            <p class="underline-t"></p>
+            <div id="myCarousel" class="carousel slide" style="padding-top: 5%">
                 <div class="carousel-inner" style="text-align: center">
                     <div class="item active">
-                        <p>屠宰加工软件</p>
-                        <div class="underline"></div>
+                        <div class="img-block col-lg-6 col-md-6 col-sm-12">
+                            <img src="{% static 'img/case1.png' %}" width="90%" alt="">
+                            <button> MORE </button>
+                        </div>
+                        <div class="p-block col-lg-6 col-md-6 col-sm-12">
+                            <p>牛羊肉屠宰加工信息系统</p>
+                            <p class="underline"></p>
+                            <p>----案例介绍</p>
+                        </div>
+
                     </div>
                     <div class="item">
-                        <p>中央厨房</p>
-                        <div class="underline" style="width: 3%"></div>
+                        <div class="img-block col-lg-6 col-md-6 col-sm-12">
+                            <img src="{% static 'img/case1.png' %}" width="90%" alt="">
+                            <button> MORE </button>
+                        </div>
+                        <div class="p-block col-lg-6 col-md-6 col-sm-12">
+                            <p>牛羊肉屠宰加工信息系统</p>
+                            <p class="underline"></p>
+                            <p>----案例介绍</p>
+                        </div>
+
                     </div>
                     <div class="item">
-                        <p>食品安全追溯</p>
-                        <div class="underline"></div>
+                        <div class="img-block col-lg-6 col-md-6 col-sm-12">
+                            <img src="{% static 'img/case1.png' %}" width="90%" alt="">
+                            <button> MORE </button>
+                        </div>
+                        <div class="p-block col-lg-6 col-md-6 col-sm-12">
+                            <p>牛羊肉屠宰加工信息系统</p>
+                            <p class="underline"></p>
+                            <p>----案例介绍</p>
+                        </div>
 
                     </div>
                 </div>
-                <!-- 轮播（Carousel）导航 -->
                 <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-chevron-left btn-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
                 <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-chevron-right btn-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-{#        </div>#}
+        </div>
+
     </div>
 
     <div class="try-out">
@@ -66,4 +84,7 @@
     </div>
 {% endblock %}
 {% block scripts %}
+    <script>
+        $('.carousel').carousel('pause')
+    </script>
 {% endblock %}

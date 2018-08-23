@@ -58,3 +58,9 @@
     .p-img1 img{width: 60% !important;margin: 10% 0 !important;}
     .try-block span{display: block;text-align: center !important;}
 }
+
+@media (min-width: 991px) and (max-width: 1200px){
+    .font-style{ font-size: 25px !important;}
+    .p-img1 img{width: 60% !important;margin: 10% 0 !important;}
+    .try-block span{display: block;text-align: center !important;}
+}

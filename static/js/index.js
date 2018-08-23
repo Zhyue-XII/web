@@ -1,5 +1,3 @@
-$('.carousel').carousel({interval: 5000})
-
 $(function () {
     $("#mo-fang").css({"transform":"rotate(360deg)","transition-delay":".8s","opacity":"1"})
     $("#mo-title").css({"opacity":"1","transform":"scale(1)","margin-top":"7%"})
