@@ -39,7 +39,7 @@
 .our-team-text{
         padding: 5% 0 3% 0;
 }
-.our-team-text p:first-child{
+.our-team-text p:first-child,.contact-title p:first-child{
     font-size: 32px;
     letter-spacing: 2px;
 }
@@ -71,12 +71,15 @@
 
 .contact-desc{
     color: gainsboro;
+    text-align: center;
+    margin-top: 35%;
 }
 .contact-desc p:first-child{
-    margin-top: 10%;
+   width: 80%;
+    margin: 0 auto;
 }
 #ct-us{
-    padding-bottom:5% ;
+    padding-bottom:2% ;
     transition: all .8s;
 }
 .contact-title{
@@ -84,13 +87,15 @@
     padding: 5% 0;
 }
 
+
 @media (max-width: 768px) {
-    .team-title-text p:first-child,.our-team-text p{ font-size: 20px !important;}
+    .team-title-text p:first-child,.our-team-text p,.contact-title p:first-child{ font-size: 20px !important;}
     .pic-block img{width: 40% !important;}
+    .contact-desc{margin-top: 10% !important;}
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-    .team-title-text p:first-child,.our-team-text p{ font-size: 25px !important;}
+    .team-title-text p:first-child,.our-team-text p,.contact-title p:first-child{ font-size: 25px !important;}
     .pic-block img{width: 60% !important;}
     #team-img{width: 80% !important;}
 }

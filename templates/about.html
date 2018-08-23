@@ -66,57 +66,53 @@
         </div>
     </div>
 
-{#    <div class="try-out">#}
-{#        <div class="t-bg" style="background: #22282d">#}
-{#            <div class="container">#}
-{#                <p class="try-block">#}
-{#                    <span class="col-lg-8">SOFTWARE让应用程序操作更加简单、更高效、更可靠。</span>#}
-{#                    <span class="col-lg-4" style="text-align: right"> <button class="my-btn scale-btn">立即试用</button></span>#}
-{#                </p>#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-
     <div class="contact-block">
         <div class="container" id="ct-us">
             <div class="contact-title">
-                <p class="scale-title" style="color: white">联系我们</p>
+                <p style="color: white">联系我们</p>
                 <p class="underline"></p>
             </div>
 
             <form action="#" class="col-lg-6 col-md-6">
                 <div class="form-group col-lg-6">
-                    <label for="name" class="control-label" style="color: gainsboro"> 姓名:</label>
+{#                    <label for="name" class="control-label" style="color: gainsboro"> 姓名:</label>#}
                     <div class="col-lg-12" style="padding-left: 0">
-                        <input class="form-control" type="text" name="name" id="name" value="" placeholder="请输入姓名...">
+                        <input class="form-control" type="text" name="name" id="name" value="" placeholder="姓名:">
                     </div>
                 </div>
 
                 <div class="form-group col-lg-6">
-                    <label for="tel" class="control-label" style="color: gainsboro">联系电话:</label>
+{#                    <label for="tel" class="control-label" style="color: gainsboro">联系电话:</label>#}
                     <div class="col-lg-12" style="padding-left: 0">
-                        <input class="form-control" type="text" name="tel" id="tel" value="" placeholder="请输入电话...">
+                        <input class="form-control" type="text" name="tel" id="tel" value="" placeholder="电话:">
                     </div>
                 </div>
 
                 <div class="form-group col-lg-12">
-                    <label for="email" class="control-label" style="color: gainsboro">公司名称:</label>
+{#                    <label for="tel" class="control-label" style="color: gainsboro">联系电话:</label>#}
+                    <div class="col-lg-12" style="padding-left: 0">
+                        <input class="form-control" type="text" name="tel" id="tel" value="" placeholder="公司名称:">
+                    </div>
+                </div>
+
+                <div class="form-group col-lg-12">
+{#                    <label for="email" class="control-label" style="color: gainsboro">公司名称:</label>#}
                     <div class="col-lg-12" style="padding-left: 0">
                         <input class="form-control" type="text" name="email" id="email" value=""
-                               placeholder="请输入邮箱...">
+                               placeholder="邮箱:">
                     </div>
                 </div>
 
                 <div class="form-group col-lg-12">
-                    <label for="email" class="control-label" style="color: gainsboro">邮箱:</label>
+{#                    <label for="email" class="control-label" style="color: gainsboro">邮箱:</label>#}
                     <div class="col-lg-12" style="padding-left: 0">
                         <input class="form-control" type="email" name="email" id="email" value=""
-                               placeholder="请输入邮箱...">
+                               placeholder="地址:">
                     </div>
                 </div>
 
                 <div class="form-group col-lg-12">
-                    <label for="remark" class="control-label" style="color: gainsboro">备注</label>
+{#                    <label for="remark" class="control-label" style="color: gainsboro">备注</label>#}
                     <div class="col-lg-12" style="padding-left: 0">
                         <textarea class="form-control" name="remark" id="remark" value=""
                                   placeholder="请输入备注..."></textarea>
@@ -127,7 +123,11 @@
                     <button class="my-btn submit-btn" style="border-radius: 0 ">联系我们</button>
                 </div>
             </form>
-            <div class="contact-desc col-lg-6 col-lg-6">
+
+            <!-- map container -->
+            <div id="container" class="col-lg-6 col-lg-6"  style="height: 300px"></div>
+
+            <div class="contact-desc">
                 <p>当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式，无论您是普通互
                     联网用户 还是专业网站制作人员都能使用起飞页设计出最具专业水准的网站</p>
                 <br>
@@ -139,8 +139,17 @@
         </div>
     </div>
 
-    <!-- map container -->
-    <div id="container"  style="height: 300px"></div>
+{#    <div class="try-out">#}
+{#        <div class="t-bg" style="background: #22282d">#}
+{#            <div class="container">#}
+{#                <p class="try-block">#}
+{#                    <span class="col-lg-8">SOFTWARE让应用程序操作更加简单、更高效、更可靠。</span>#}
+{#                    <span class="col-lg-4" style="text-align: right"> <button class="my-btn scale-btn">立即试用</button></span>#}
+{#                </p>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+
     <script>
        var map = new AMap.Map('container', {
             resizeEnable: true,
