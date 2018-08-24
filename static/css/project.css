@@ -1,0 +1,27 @@
+.pro-block{
+    padding: 3% 0 5% 0;
+}
+
+.pro-block-title p{
+    font-size: 22px;
+    color: black;
+}
+.pro-block-title span{
+    font-size: 15px;
+    color: grey;
+    display: block;
+    padding: 2% 0;
+}
+
+.pro-text{
+    padding-top: 2%;
+}
+.pro-text p:first-child{
+    font-size: 18px;
+}
+.pro-text p:nth-child(3){
+    padding-top: 2%;
+}
+.underline-m{
+    border: 1px solid gainsboro;
+}

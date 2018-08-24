@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/case.css' %}">
+    <link rel="stylesheet" href="{% static 'css/project.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="case-title">
+        <div class="container" style="text-align: center">
+            <div class="case-title-text">
+                <p class="scale-title">我们的 <span style="color: #f54e05">案例</span></p>
+                <p>Our case</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="pro-block">
+        <div class="container">
+            <div class="pro-block-title">
+                <p><strong> 牛羊肉屠宰加工信息系统 </strong></p>
+                <span>日期:2018-07-25</span>
+            </div>
+            <img src="{% static 'img/case1.png' %}" width="100%" alt="">
+            <div class="pro-text">
+                <p>项目详细描述:</p>
+                <p class="underline-m"></p>
+                <p>
+                    你肯定会离开的多了很多你肯定会看得见的肯德基的科技看到进步的空间不大大家看不懂就看不懂
+                </p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block scripts %}{% endblock %}
