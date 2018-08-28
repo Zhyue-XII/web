@@ -138,7 +138,7 @@
 .bg-service span,.dp-title span,.dp-block-text span{color: gray}
 .dp-title p{color: black;padding: 10% 0 0 0}
 .dp-block-text{
-    border: 1px solid #f54e058c;
+    border: 1px solid #f54e05;
     border-radius: 30px;
     padding: 5% 2%;
 }
@@ -218,3 +218,7 @@
 }
 
 .try-it{padding: 5% 0}
+.frm-img img{
+    margin-top: 10%;
+    width: 100%;
+}

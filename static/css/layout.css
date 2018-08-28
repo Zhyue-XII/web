@@ -44,7 +44,7 @@
 @media (min-width: 768px) and (max-width: 991px){
     .scale-title{font-size: 28px !important;}
 }
-@media (min-width: 991px) {
+@media (min-width: 991px){
     .nav-menu{width: 75%}
     .scale-title{font-size: 35px !important;}
 }
