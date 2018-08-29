@@ -3,6 +3,9 @@
 {% block styles %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock %}
+{% block script %}
+    <script src="{% static 'bootstrap-dist/js/bootstrapValidator.min.js' %}"></script>
+{% endblock %}
 {% block content %}
 
     <div class="index-pic" style="position: absolute; z-index:-1">
@@ -177,45 +180,39 @@
                         <div class="current-img">
                             <div class="img-box cm-pic"><img src="{% static 'img/pic2.png' %}" alt=""></div>
                             <div class="wu-text cm-text">
-                                <p>
-                                    拥有全球最领先的屏幕界面智能识别技术，实现所有建站功能组件在多种屏幕下的完美呈现，
-                                    真正让您的桌面/平板/手机3个网站同步生成，还可连接微信公众平台，创建您的微站。
-                                    当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式
-                                    让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户， 还是专业网站制作人员，
-                                    都能使用起飞页设计出最具专业水准的网站。
-                                </p>
+
                                 <h3>张志军</h3>
                                 <p style="color: #f54e05">锡林浩特蒙辰畜牧业公司CEO</p>
+                                <p>
+                                    牛羊肉屠宰信息系统为我们节省了人力资源，收购数据的自动采集提高了我们的收购效率，可视化的收购统计
+                                    ，科学的数据分析，提高了产品收益。对于仓库的管理更加方便明了，肉制品溯源让食品安全提升了一个高度。
+                                    让收购，生产，入库，销售一体化，有利于数据相互交流，方便运营管理。
+                                </p>
                             </div>
                         </div>
 
                         <div class="current-img">
                             <div class="img-box cm-pic"><img src="{% static 'img/pic1.png' %}" alt=""></div>
                             <div class="wu-text cm-text">
-                                <p>
-                                    拥有全球最领先的屏幕界面智能识别技术，实现所有建站功能组件在多种屏幕下的完美呈现，
-                                    真正让您的桌面/平板/手机3个网站同步生成，还可连接微信公众平台，创建您的微站。
-                                    当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式
-                                    让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户， 还是专业网站制作人员，
-                                    都能使用起飞页设计出最具专业水准的网站。
-                                </p>
-                                <h3>张贺卡</h3>
+                                <h3>廖思源</h3>
                                 <p style="color: #f54e05">XXX 公司创始人</p>
+                                <p>
+                                    系统通过软件和吊秤，地称的硬件系统进行连接，将数据自动采集到系统中来，在对收购的数据进行相关的运算
+                                    并应用在不同的子模块中去，进行相关的数据统计分析，和原来采集的数据对比，是我们的业务数据一目了然，同
+                                    时库存预警，为我们销售环节做出相关提醒和警报。使我们的销售数据化，系统化。
+                                </p>
                             </div>
                         </div>
 
                         <div class="current-img">
                             <div class="img-box cm-pic"><img src="{% static 'img/pic1.png' %}" alt=""></div>
                             <div class="wu-text cm-text">
-                                <p>
-                                    拥有全球最领先的屏幕界面智能识别技术，实现所有建站功能组件在多种屏幕下的完美呈现，
-                                    真正让您的桌面/平板/手机3个网站同步生成，还可连接微信公众平台，创建您的微站。
-                                    当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式
-                                    让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户， 还是专业网站制作人员，
-                                    都能使用起飞页设计出最具专业水准的网站。
-                                </p>
-                                <h3>张贺卡</h3>
+                                <h3>张贺</h3>
                                 <p style="color: #f54e05">XXX 公司创始人</p>
+                                <p>
+                                    系统使用统一的客户端，将所有数据放在同一个数据库中，便于查找和分析，各个角色给与不同的权限去访问，提高
+                                    数据信息的使用效率，各个业务逻辑模块化，可以随意拆分和搭建，具有良好的可扩展性。
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -231,7 +228,7 @@
 
     <div class="try-it" id="try-it">
         <div class="container">
-            <form action="#" class="col-lg-7 col-md-7">
+            <form action="#" id="frm-data" class="col-lg-7 col-md-7">
                 <p class="scale-title" style="color: #f54e05;margin-bottom: 50px">您对我们的支持是我们最大的动力</p>
                 <div class="form-group col-lg-6">
                     <label for="name" class="control-label"> 姓名:</label>
@@ -248,9 +245,9 @@
                 </div>
 
                 <div class="form-group col-lg-12">
-                    <label for="email" class="control-label">公司名称:</label>
+                    <label for="company" class="control-label">公司名称:</label>
                     <div class="col-lg-12" style="padding-left: 0">
-                        <input class="form-control" type="email" name="email" id="email" value=""
+                        <input class="form-control" type="text" name="company" id="company" value=""
                                placeholder="请输入邮箱...">
                     </div>
                 </div>
@@ -272,13 +269,13 @@
                 </div>
 
                 <div class="form-group col-lg-12">
-                    <button class="my-btn submit-btn">申请试用</button>
+                    <button class="my-btn submit-btn" id="sbm-btn">申请试用</button>
                 </div>
             </form>
+
             <div class="frm-img col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1">
                 <img  src="{% static 'img/5.png' %}" alt="">
             </div >
-
         </div>
     </div>
 {% endblock %}
