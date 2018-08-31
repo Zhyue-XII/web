@@ -19,9 +19,9 @@
     font-size: 15px;
 }
 
-.p-img1 img{
+.img-display img{
     width: 100%;
-    margin: 30% 0;
+    margin: 2%;
 }
 .p-desc-block{
     padding: 4%;
@@ -30,7 +30,6 @@
 .p-name{
     font-size: 25px;
     font-family: 微软雅黑;
-    color: #f54e05;
     margin-bottom: 30px;
     padding-bottom: 15px;
     border-bottom: 1px solid gainsboro;
