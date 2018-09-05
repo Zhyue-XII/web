@@ -18,13 +18,13 @@
 .pro-text{
     padding-top: 2%;
 }
-.pro-text p:nth-child(2){
+.pro-text p:nth-child(2),.pro-text p:nth-child(6){
     text-indent: 2em;
     color: grey;
     font-size: 15px;
 }
 
-.pro-text p:first-child,.pro-text p:nth-child(3){
+.pro-text p:first-child,.pro-text p:nth-child(3),.pro-text p:nth-child(5){
     font-size: 15px;
 }
 
