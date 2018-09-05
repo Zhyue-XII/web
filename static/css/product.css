@@ -19,9 +19,17 @@
     font-size: 15px;
 }
 
+.product01-display{
+    padding: 0 4% 10%;
+}
+ol{
+    margin-left: 2%;
+    color: grey;
+}
+.img-div{text-align: center}
 .img-display img{
     width: 100%;
-    margin: 2%;
+    margin:2% 0;
 }
 .p-desc-block{
     padding: 4%;
@@ -60,7 +68,10 @@
     .font-style{ font-size: 20px !important;}
     .p-img1 img{ margin: 10% 0 !important;}
     .try-block span{display: block;text-align: center !important;}
+    .try-block a{margin-left: 24% !important;}
     .p-name{font-size: 16px !important;}
+    ol{margin-left: 6% !important;}
+    .img-div img{width: 100%}
 }
 @media (min-width: 768px) and (max-width: 991px){
     .font-style{ font-size: 25px !important;}
