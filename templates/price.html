@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/price.css' %}">
+    <link rel="stylesheet" href="{% static 'css/product.css' %}">
+{% endblock %}
+{% block content %}
+
+    <div style="background-color: rgba(96,96,96,0.7)">
+        <div class="bg-img">
+            <div class="container price-title">
+                <p class="scale-title">互联网时代的<span style="color: #f54e05">工作态度</span></p>
+                <p>让企业更高效，让工作更简单，提供企业沟通，协作，办公，管理所需要一切方式</p>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="try-out">
+        <div class="t-bg" style="background: #22282d">
+            <div class="container">
+                <p class="try-block">
+                    <span class="col-lg-10">SOFTWARE让应用程序操作更加简单、更高效、更可靠。</span>
+                    <span class="col-lg-2" style="text-align: right"> <a href="http://127.0.0.1:8000/" class="my-btn scale-btn">立即试用</a></span>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+{% endblock %}

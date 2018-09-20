@@ -1,0 +1,16 @@
+.bg-img{
+    height: 870px;
+    background-image:url("../img/price_bg.jpg");
+    background-size:cover ;
+    z-index: -2;
+    position: relative;
+}
+
+.price-title{
+    color: white;
+    text-align: center;
+}
+.price-title p:first-child{
+    padding-top: 13%;
+    padding-bottom: 3%;
+}
