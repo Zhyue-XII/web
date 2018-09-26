@@ -22,8 +22,17 @@
     transition: all .8s;
 }
 .team-desc-text{
-    padding: 5%;
+    padding:0 5%;
     font-family: 微软雅黑;
+}
+.team-desc-text span{
+    display: block;
+    margin-bottom: 10px;
+}
+.team-desc-text span:nth-child(2),
+.team-desc-text span:nth-child(3),
+.team-desc-text span:nth-child(4){
+    text-indent: 2em;
 }
 .team-desc-text p{
     color: black;
