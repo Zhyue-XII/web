@@ -26,7 +26,8 @@ urlpatterns = [
     path('product/', TemplateView.as_view(template_name='product.html')),
     path('about/', TemplateView.as_view(template_name='about.html')),
     path('case/', TemplateView.as_view(template_name='case.html')),
+    path('news/', TemplateView.as_view(template_name='news.html')),
     path('project/', TemplateView.as_view(template_name='project01.html')),
     path('price/', TemplateView.as_view(template_name='price.html')),
-    path('forum/', include(board.urls)),
+    path('forum/', include(board.urls))
 ]

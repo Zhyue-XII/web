@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/news.css' %}">
+{% endblock %}
+{% block script %}
+{% endblock %}
+{% block content %}
+    <div class="case-title">
+        <div class="container" style="text-align: center">
+            <div class="case-title-text">
+                <p class="scale-title">公司<span style="color: #f54e05">新闻</span></p>
+                <p>Our case</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="case-block">
+        <div class="container news">
+            <a class="a-link" href="">
+                <div class="news-block">
+                    <p><span class="day">09-25</span> 2018</p>
+                    <span class="a-title">新闻标题</span><br>
+                    <p class="a-text">新闻简介.....&gt;</p>
+                </div>
+            </a>
+
+            <a class="a-link" href="">
+                <div class="news-block">
+                    <p><span class="day">09-25</span> 2018</p>
+                    <span class="a-title">新闻标题</span><br>
+                    <p class="a-text">新闻简介.....&gt;</p>
+                </div>
+            </a>
+
+            <a class="a-link" href="">
+                <div class="news-block">
+                    <p><span class="day">09-25</span> 2018</p>
+                    <span class="a-title">新闻标题</span><br>
+                    <p class="a-text">新闻简介.....&gt;</p>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+{% endblock %}
+{% block scripts %}
+    <script>
+
+    </script>
+{% endblock %}

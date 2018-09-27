@@ -156,13 +156,12 @@
     min-height: 500px;
     background: white;
 }
-.wu-control button{
-    width: 140px !important;
-    margin: 0 40px;
-}
-.wu-control button:hover{background: grey}
 
-.wu-control,.cm-title{margin:70px 0 30px 0 }
+.cm-title{margin:70px 0 30px 0 }
+.act{
+    padding: 10% 0;
+}
+
 
 .wu-img,.cm-comment{overflow: hidden;}
 .wu-wapper,.cm-wapper{
