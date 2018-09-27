@@ -9,7 +9,7 @@
 {% block content %}
 
     <div class="index-pic" style="position: absolute; z-index:-1">
-        <div id="myCarousel" class="carousel" data-ride="carousel" data-interval="5000">
+        <div id="myCarousel" class="carousel cl-bg" data-ride="carousel" data-interval="5000">
             <div class="carousel-inner">
                 <div class="active item">
                     <img src="{% static 'img/1.jpg' %}" alt="">
@@ -108,9 +108,24 @@
 
     <div class="why-us">
         <div class="container" style="text-align: center">
-            <div class="act" style="border: 1px solid green">
+            <div class="act">
                 <p class="scale-title">新闻<span style="color: #f54e05">动态</span></p>
-                <span> news </span>
+                <span style="margin-bottom: 3%"> news </span>
+
+                <div class="news-container">
+                    <div id="current-news" class="current-news">
+                        <div class="new-text">
+                            <p>新闻摘要</p>
+                        </div>
+                        <div class="new-text">
+                            <p>新闻摘要</p>
+                        </div>
+                        <div class="new-text">
+                            <p>新闻摘要</p>
+                        </div>
+                    </div>
+                </div>
+
 
 
             </div>
@@ -225,4 +240,18 @@
             </div >
         </div>
     </div>
+{% endblock %}
+{% block scripts %}
+    <script>
+        var size = 0;
+        function next() {
+            if(size < 60){
+                size = size + 33.333;
+                $('#current-news').css({'transform':'translate(-'+size+'%)'})
+            } else {
+                size = -33.33
+            }
+        }
+        setInterval("next()",5000);
+    </script>
 {% endblock %}

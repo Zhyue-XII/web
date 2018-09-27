@@ -81,7 +81,7 @@
 }
 
 /*main-page*/
-.carousel {
+.cl-bg {
     background: rgba(51,60,63,0.7);
 }
 .carousel-inner{z-index: -2}
@@ -159,7 +159,7 @@
 
 .cm-title{margin:70px 0 30px 0 }
 .act{
-    padding: 10% 0;
+    padding: 5% 0;
 }
 
 
@@ -223,4 +223,26 @@
 }
 #frm-data i {
     right: 10px;
+}
+
+/*新闻动态*/
+.news-container{
+    height: 300px;
+    overflow:hidden;
+    position: relative;
+
+}
+.current-news{
+    width: 300%;
+    transition: .8s;
+}
+.new-text{
+    width: 33.33%;
+    float: left;
+    height: 300px;
+}
+
+.new-text p{
+    font-size: 20px;
+    padding: 5% 0;
 }
