@@ -25,7 +25,7 @@
             <div class="menu">
                 <ul class="nav-ul">
                     <li><a href="http://127.0.0.1:8000/">首页</a></li>
-                    <li class="posi"><a href="javascript:oplist()">产品</a><b class="caret"></b>
+                    <li class="posi" onmouseleave="leave()"><a href="javascript:void(0)">产品</a><b class="caret"></b>
                         <ul class="display-nav">
                             <li><a href="http://127.0.0.1:8000/product">牛羊肉加工</a></li>
                             <li><a href="">猪肉加工</a></li>
@@ -94,6 +94,12 @@
         } else {
             $(".menu").css({"display": "none"})
         }
+    })
+    function leave() {
+        $(".display-nav").css({"display": "none"})
+    }
+    $(".posi").hover(function () {
+        $(".display-nav").css({"display": "block"})
     })
 </script>
 <script src="{% static 'js/index.js' %}"></script>

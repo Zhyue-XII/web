@@ -64,13 +64,20 @@
 
 }
 
-
 .menu{
     text-align: center;
 }
 .logo img{width: 120px;padding: 10px 0}
 .nav-tel{color: white;margin-top: 10px;text-align: right}
 .nav-tel img{margin-right: 10px}
+.nav-tel span{
+    font-family: Gabriola;
+    font-size: 25px;
+}
+nav{
+    position: absolute;z-index: 2;
+    width: 100%;
+}
 
 .nav-btn {
     background: none;
