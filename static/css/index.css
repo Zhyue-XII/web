@@ -1,18 +1,6 @@
 @media (max-width: 768px) {
     /*main-page*/
-    .mo-fang{
-        display: none;
-    }
-    .dp-block-text{
-        width: 95%;
-        margin:2%;
-        display: inline-block;
-    }
-    .mo-title p,.mo-title div{
-        text-align: center !important;
-    }
-    .mo-title a{margin: 0 auto}
-    .mo-title span:nth-child(2){font-size: 15px !important;}
+
     .wu-control span{
         display: block;
         margin: 10px 0;
@@ -29,13 +17,6 @@
      .cm-pic{margin-top: 10% !important;}
 }
 @media (min-width: 768px) and (max-width: 991px) {
-    /*mian-page*/
-    .mo-fang{
-        display: none;
-    }
-     .mo-title p,.mo-title div{
-        text-align: center !important;
-    }
     .bg-service{
         width: 25% !important;
     }
@@ -77,53 +58,24 @@
     .wu-control{
         min-width: 715px;
     }
-    .mo-fang{text-align: center}
 }
 
 /*main-page*/
-.cl-bg {
-    background: rgba(51,60,63,0.7);
+.bg1,.bg2,.bg3{
+    background-size: cover;
+    height: 550px;
 }
-.carousel-inner{z-index: -2}
+.bg1{
+    background-image: url("../img/1.jpg");
+}
+.bg2{
+   background-image: url("../img/2.jpg");
+}
+.bg3{
+   background-image: url("../img/3.jpg");
+}
 .item img{min-height: 550px}
 
-.title-block{
-    overflow: hidden;
-    padding: 7% 0;
-}
-.mo-title{
-    opacity: 0;
-    transform: scale(0) ;
-    transition: all .8s;
-}
-#mo-fang{
-    opacity: 0;
-    transition:all 0.8s
-}
-.mo-title p{
-    transition: all 0.8s;
-}
-.mo-title span{
-    color: rgb(211,211,211);
-    letter-spacing: 10px;
-}
-.mo-title span:first-child,.dp-title p,.cm-title{
-    font-size: 35px;
-}
-.mo-title span:nth-child(2){
-    display: block;
-    font-size: 20px;
-    margin-bottom: 40px;
-}
-.mo-title a{
-    display: block;
-    line-height: 45px;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    float: left;
-}
-.mo-title a:nth-child(2){margin-left: 10px}
 
 .service{
     min-height: 286px;

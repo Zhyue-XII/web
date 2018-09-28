@@ -13,33 +13,38 @@
     {% block script %}{% endblock %}
 </head>
 <body>
-<div class="nav" id="nav">
-    <div class="container">
-        <nav class="nav-block">
-            <div class="nav-logo">
-                <a href="http://127.0.0.1:8000/">
-                    <img src="{% static 'img/logo.png' %}" alt="">
-                </a>
+<nav class="nav">
+    <div class="container-fluid">
+        <div class="container nav-f">
+            <div class="logo">
+                <img class="logo" src="{% static 'img/logo.png' %}" alt="">
+                <button class="nav-btn"><span class="glyphicon glyphicon-align-justify"></span></button>
             </div>
-            <div class="nav-menu" id="nav-menu">
-                <ul>
+
+
+            <div class="menu">
+                <ul class="nav-ul">
                     <li><a href="http://127.0.0.1:8000/">首页</a></li>
-                    <li><a href="http://127.0.0.1:8000/product">产品<b class="caret"></b></a></li>
-{#                    <li><a href="http://127.0.0.1:8000/case">案列</a></li>#}
-{#                    <li><a href="http://127.0.0.1:8000/price">报价</a></li>#}
+                    <li class="posi"><a href="javascript:oplist()">产品</a><b class="caret"></b>
+                        <ul class="display-nav">
+                            <li><a href="http://127.0.0.1:8000/product">牛羊肉加工</a></li>
+                            <li><a href="">猪肉加工</a></li>
+                        </ul>
+                    </li>
                     <li><a href="http://127.0.0.1:8000/news">动态</a></li>
                     <li><a href="http://127.0.0.1:8000/about">关于</a></li>
                     <li><a href="http://127.0.0.1:8000/forum">论坛</a></li>
                 </ul>
-                <button id="nav-icon" class="nav-icon"><span class="glyphicon glyphicon-align-justify"></span></button>
             </div>
+
             <div class="nav-tel">
-                <img src="{% static 'img/tel.png' %}" alt="">&nbsp;&nbsp;
+                <img src="{% static 'img/tel.png' %}" width="40" alt="">
                 <span>029-81126683</span>
             </div>
-        </nav>
+        </div>
     </div>
-</div>
+</nav>
+
 
 <div class="main-page">
     {% block content %}{% endblock %}
@@ -73,23 +78,24 @@
 </div>
 </body>
 <script>
-
-</script>
-<script src="{% static 'js/index.js' %}"></script>
-<script>
-    var icon = document.getElementById('nav-icon')
-    var menu = document.getElementById('nav-menu')
-    var nav = document.getElementById('nav')
     var count = 1;
-    icon.onclick = function () {
+    function oplist() {
         count ++;
-        if (count%2 === 0) {
-            nav.style.overflow = 'visible';
-            menu.style.position = 'absolute'
+        if(count %2 === 0){
+            $(".display-nav").css({"display":"block"})
         }else {
-            nav.style.overflow = 'hidden'
+            $(".display-nav").css({"display":"none"})
         }
     }
+    $(".nav-btn").click(function () {
+        count++;
+        if (count % 2 === 0) {
+            $(".menu").css({"display": "block"})
+        } else {
+            $(".menu").css({"display": "none"})
+        }
+    })
 </script>
+<script src="{% static 'js/index.js' %}"></script>
 {% block scripts %}{% endblock %}
 </html>

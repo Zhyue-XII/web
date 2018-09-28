@@ -3,31 +3,6 @@
     padding: 0;
 }
 @media (max-width: 768px) {
-    .nav-logo,.nav-tel{
-        display: none;
-    }
-    .nav-menu{
-        background: #f54e05;
-        color: white;
-        position: relative;
-        width: 100% ;
-        transition: all 0.8s;
-    }
-    .nav-icon{
-        position: absolute;
-        top: 0;
-        right: 20px;
-        background: none;
-        border: none;
-        outline: none;
-    }
-    .nav-menu ul li{
-        display: block;
-    }
-    nav ul a:hover{
-        color: white;
-        text-decoration: none;
-    }
     .container{
         padding-left: 0 !important;
         padding-right: 0 !important;
@@ -38,60 +13,91 @@
         transform: scale(.8);
         transition: all .8s;
     }
-    .about-us{display: none}
-    .our-service{display: none}
+
+    nav{background: #f54e05}
+    .nav-tel,.menu{display: none}
+    .nav-btn{float: right}
+    .our-service,.about-us{display: none}
+    .nav-ul li{
+        padding: 10px 0;
+    }
 }
 @media (min-width: 768px) and (max-width: 991px){
     .scale-title{font-size: 28px !important;}
-    .nav-icon{display: none}
+
+    nav{background: #f54e05}
+    .nav-btn{float: right}
+    .nav-tel,.menu{display: none}
+    .nav-ul li{
+        padding: 10px 0;
+    }
 }
 @media (min-width: 991px){
-    .nav-menu{width: 75%}
     .scale-title{font-size: 35px !important;}
-    .nav-icon{display: none}
+    .scale-title{font-size: 35px !important;}
+
+    nav{background: #22282d;}
+    .nav-ul li{
+        display: inline-block;
+    }
+    .display-nav li{
+        display: block;
+        padding: 10px 30px !important;
+    }
+    .logo,.menu{float: left;}
+    .nav-tel{float: right}
+
+    .display-nav{
+        position: absolute;
+        z-index: 1000;
+        left: -27px;
+        width: 150%;
+        background: #22282d;
+    }
+    .posi{position: relative}
+    .logo,.nav-tel{width: 20%}
+    .menu{ width: 60%;margin-top: 20px;}
+    .nav-btn{display: none}
+    .nav-ul li{
+        padding: 0 5%;
+    }
+
 }
 
-.nav {
-    background: #22282d;
-    overflow: hidden;
-    height: 60px;
-    transition: all 0.8s;
-    position: relative;
-    z-index: 3;
-}
-.nav-block div:first-child,.nav-block div:nth-child(2){float: left;padding-top: 5px}
-.nav-block div:last-child{float: right;height: 60px}
-.nav-logo img{width: 120px;}
-.nav-menu{line-height: 50px}
 
-nav ul,.nav-tel{
-    list-style: none;
-    color: white;
-}
-nav ul li{
-    display: inline-block;
-}
-.nav-menu{
+.menu{
     text-align: center;
 }
-.nav-tel{
-    text-align: right;
-    line-height: 60px;
+.logo img{width: 120px;padding: 10px 0}
+.nav-tel{color: white;margin-top: 10px;text-align: right}
+.nav-tel img{margin-right: 10px}
+
+.nav-btn {
+    background: none;
+    border: 1px solid white;
+    outline: none;
+    color: white;
+    margin-top: 12px;
+    padding: 1%;
+    border-radius: 4px;
 }
-.nav-tel img{
-    width: 30px;
+nav ul{
+    list-style: none;
+    font-size: 18px;
+    font-family: 微软雅黑;
+    color: white;
+}
+.nav-ul li a{
+    color: white;
+    text-decoration: none;
+}
+.display-nav{
+    display: none;
+    transition: all .8s;
 }
 @font-face {
     font-family: 'Ga';
     src: url("../fonts/gabriola.ttf");
-}
-.nav-tel span{
-    font-family: Ga;
-    font-size: 25px;
-}
-ul a{
-    color: white;
-    padding: 10px 40px;
 }
 .cm-title,ul a:hover,.dp-block-text p{
     color: #f54e05;
