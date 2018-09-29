@@ -1,6 +1,7 @@
 .p-title-bg{
     background-image: url("../img/bg3.png");
     background-size: cover;
+    padding-top: 60px;
 }
 .p-bg{
     padding-top: 100px;
@@ -55,6 +56,7 @@
     text-align: center;
     line-height: 45px;
     text-decoration: none;
+    margin: 0 auto;
 }
 .try-block a:hover{
     text-decoration: none;
@@ -67,7 +69,6 @@
     .font-style{ font-size: 20px !important;}
     .p-img1 img{ margin: 10% 0 !important;}
     .try-block span{display: block;text-align: center !important;}
-    .try-block a{margin-left: 24% !important;}
     .p-name{font-size: 16px !important;}
     ol{margin-left: 6% !important;}
     .img-div img{width: 100%}

@@ -1,6 +1,7 @@
 .team-title{
     background-image: url("../img/bg2.jpg");
     background-size: cover;
+    padding-top: 60px;
 }
 
 .team-title-text{
@@ -16,7 +17,7 @@
 .team-desc{background-color: white;min-height: 200px}
 
 .team-desc-img img{
-    width: 100%;
+    width: 70%;
     margin-top: 40px;
     transition: all .8s;
 }
@@ -93,12 +94,15 @@
 
 @media (max-width: 768px) {
     .team-title-text p:first-child,.our-team-text p,.contact-title p:first-child{ font-size: 20px !important;}
-    .pic-block img{width: 40% !important;}
     .contact-desc{margin-top: 10% !important;}
+    #team-img{width: 50% !important;}
+    .team-desc-img{padding-bottom: 20px;text-align: center}
+    .team-desc-img img{margin-top: 0 !important;}
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
     .team-title-text p:first-child,.our-team-text p,.contact-title p:first-child{ font-size: 25px !important;}
-    .pic-block img{width: 60% !important;}
-    #team-img{width: 80% !important;}
+    #team-img{width: 50% !important;}
+    .team-desc-img{padding-bottom: 20px;text-align: center}
+    .team-desc-img img{margin-top: 0 !important;}
 }

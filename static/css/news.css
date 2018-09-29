@@ -1,6 +1,7 @@
 .case-title{
     background-image: url("../img/bg3.jpg");
     background-size: cover;
+    padding-top: 60px;
 }
 .case-title-text{
     padding: 10% 0;
@@ -45,4 +46,12 @@ a:hover{
 
 .a-title{
     font-size: 20px;
+}
+
+@media (max-width: 768px) {
+   .news-block p:first-child{
+       float: none !important;
+       text-align: left !important;
+   }
+    .case-block{padding: 0 !important;}
 }

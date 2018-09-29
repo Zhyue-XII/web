@@ -87,7 +87,7 @@
 .item img{
     min-height: 622px;
 }
-.cover-bg{background: rgba(51,60,63,0.7)}
+.cover-bg{background: rgba(51,60,63,0.7);padding-top: 60px}
 .text,.img-box{
     float: left;
     margin-top: 60px;
@@ -95,7 +95,7 @@
 .text{
     width: 60%;
     color: rgb(211,211,211);
-    padding: 15% 0;
+    padding: 10% 0;
     transform: scale(0.5);
     transition: all .8s;
     margin-top: 0;
@@ -113,7 +113,6 @@
 a:hover{text-decoration: none;color: white}
 .img-box{
     width: 40%;
-    height: 490px;
     overflow: hidden;
     transform: rotateY(0deg);
 
