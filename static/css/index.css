@@ -15,6 +15,12 @@
      .contact-us{text-align: center !important;}
      .current-img{padding: 0 20px !important;}
      .cm-pic{margin-top: 10% !important;}
+     .text{width: 100% !important;text-align: center;}
+     .img-box{display: none}
+     .text a{margin: 5% auto}
+     .text p{font-size: 25px !important;}
+     .text span{display: none}
+     .dp-block-text{margin: 20px 5% !important;}
 }
 @media (min-width: 768px) and (max-width: 991px) {
     .bg-service{
@@ -42,6 +48,9 @@
     }
     .about-us{text-align: center}
     .contact-us{text-align: center}
+    .text{width: 100% !important;text-align: center}
+    .img-box{display: none}
+    .text a{margin: 5% auto}
 }
 @media (min-width: 991px) {
     /*main-page*/
@@ -61,21 +70,70 @@
 }
 
 /*main-page*/
-.bg1,.bg2,.bg3{
-    background-size: cover;
-    height: 550px;
+/*.bg1,.bg2,.bg3{*/
+    /*background-size: cover;*/
+    /*height: 550px;*/
+/*}*/
+/*.bg1{*/
+    /*background-image: url("../img/1.jpg");*/
+/*}*/
+/*.bg2{*/
+   /*background-image: url("../img/2.jpg");*/
+/*}*/
+/*.bg3{*/
+   /*background-image: url("../img/3.jpg");*/
+/*}*/
+/*.item img{min-height: 550px}*/
+.item img{
+    min-height: 622px;
 }
-.bg1{
-    background-image: url("../img/1.jpg");
+.cover-bg{background: rgba(51,60,63,0.7)}
+.text,.img-box{
+    float: left;
+    margin-top: 60px;
 }
-.bg2{
-   background-image: url("../img/2.jpg");
+.text{
+    width: 60%;
+    color: rgb(211,211,211);
+    padding: 15% 0;
+    transform: scale(0.5);
+    transition: all .8s;
+    margin-top: 0;
 }
-.bg3{
-   background-image: url("../img/3.jpg");
+.text p{
+    font-size: 35px;
+    letter-spacing: 5px;
 }
-.item img{min-height: 550px}
+.text a{
+    display: block;
+    line-height: 45px;
+    text-align: center;
+    margin-top: 5%;
+}
+a:hover{text-decoration: none;color: white}
+.img-box{
+    width: 40%;
+    height: 490px;
+    overflow: hidden;
+    transform: rotateY(0deg);
 
+    transition: all 2s;
+    transition-delay: .8s;
+}
+.img-window{
+    height: 490px;
+    width: 300%;
+    line-height: 490px;
+    text-align: center;
+}
+.img-window div{
+    width: 33.33%;
+    height: 490px;
+    float: left;
+}
+.animal{
+    width: 70%;
+}
 
 .service{
     min-height: 286px;
@@ -126,7 +184,7 @@
     float: left;
     padding: 60px 20px;
 }
-.wu-text,.img-box{
+.wu-text{
     width: 50%;
     float: left;
 }
@@ -139,9 +197,6 @@
     font-size: 15px;
     color: #808080;
     font-family: 微软雅黑;
-}
-.img-box img{
-    width: 100%;
 }
 
 .customer{background-image: url("../img/bg2.jpg");}

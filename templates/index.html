@@ -8,27 +8,44 @@
 {% endblock %}
 {% block content %}
 
-    <div class="index-pic" style="min-height: 500px;">
+    <div class="index-pic" style="min-height: 500px;position: absolute;z-index: -1">
         <div id="myCarousel" class="carousel cl-bg" data-ride="carousel" data-interval="5000">
             <div class="carousel-inner">
                 <div class="active item ">
-                    <div class="bg1"></div>
+{#                    <div class="bg1"></div>#}
+                    <img src="{% static 'img/1.jpg' %}">
                 </div>
                 <div class="item">
-                    <div class="bg2"></div>
+{#                    <div class="bg2"></div>#}
+                    <img src="{% static 'img/2.jpg' %}">
                 </div>
                 <div class="item">
-                   <div class="bg3"></div>
+{#                   <div class="bg3"></div>#}
+                    <img src="{% static 'img/3.jpg' %}">
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="desc">
-            <div class="container">
-                <p>肉制成产加工信息系统上线</p>
+    <div class="cover-bg">
+        <div class="container">
+            <div class="container-fluid">
+                <div class="text">
+                    <p>牛羊肉生产管理信息系统上线</p>
+                    <span>MEAT PRODUCTION MANAGEMENT INFORMATION SYSTEM</span>
+                    <a id="try-btn" class="my-btn scale-btn" href="#try-it">申请试用</a>
+                </div>
+                <div class="img-box">
+                    <div class="img-window">
+                        <div>
+                            <img class="animal" src="{% static 'img/yang2.png' %}" alt="">
+                        </div>
+                        <div> <img class="animal" src="{% static 'img/zhu.png' %}" alt=""></div>
+                        <div> <img class="animal" src="{% static 'img/niu.png' %}" alt=""></div>
+                    </div>
+                </div>
             </div>
-
+        </div>
     </div>
 
     <div class="service">
@@ -103,13 +120,13 @@
                 <div class="news-container">
                     <div id="current-news" class="current-news">
                         <div class="new-text">
-                            <p>新闻摘要</p>
+                            <p>新闻摘要1</p>
                         </div>
                         <div class="new-text">
-                            <p>新闻摘要</p>
+                            <p>新闻摘要2</p>
                         </div>
                         <div class="new-text">
-                            <p>新闻摘要</p>
+                            <p>新闻摘要3</p>
                         </div>
                     </div>
                 </div>
@@ -241,5 +258,20 @@
             }
         }
         setInterval("next()",5000);
+
+        function logonext() {
+            if(size < 60){
+                size = size + 33.333;
+                $('.img-window').css({'transform':'translate(-'+size+'%)'})
+            } else {
+                size = -33.33
+            }
+        }
+        setInterval("logonext()",6000);
+
+        $(function () {
+            $(".text").css({"transform": "scale(1)","margin-top":"5%"})
+            $(".img-box").css({"transform": "rotateY(360deg)"})
+        })
     </script>
 {% endblock %}
