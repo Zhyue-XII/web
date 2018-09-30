@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'xadmin',
     'crispy_forms',
-
+    'contact',
     'mptt',
     'haystack',
     'widget_tweaks',

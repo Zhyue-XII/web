@@ -18,6 +18,7 @@ from django.urls import path, include
 from extra_apps import xadmin
 from django.views.generic.base import TemplateView
 from machina.app import board
+from contact.urls import urlpatterns as contact_urls
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
@@ -29,5 +30,6 @@ urlpatterns = [
     path('news/', TemplateView.as_view(template_name='news.html')),
     path('project/', TemplateView.as_view(template_name='project01.html')),
     path('price/', TemplateView.as_view(template_name='price.html')),
-    path('forum/', include(board.urls))
+    path('forum/', include(board.urls)),
+    path('contact/',  include(contact_urls))
 ]

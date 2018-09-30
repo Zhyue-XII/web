@@ -68,7 +68,11 @@
         min-width: 715px;
     }
 }
-
+@media (min-width: 991px) and (max-width: 1200px){
+    .frm-img img{
+        margin-top: 80% !important;
+    }
+}
 /*main-page*/
 /*.bg1,.bg2,.bg3{*/
     /*background-size: cover;*/
@@ -224,7 +228,7 @@ a:hover{text-decoration: none;color: white}
 
 .try-it{padding: 5% 0}
 .frm-img img{
-    margin-top: 10%;
+    margin-top: 20%;
     width: 100%;
 }
 #frm-data i {

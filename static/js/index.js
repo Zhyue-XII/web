@@ -104,8 +104,8 @@ $("#sbm-btn").click(function () {
     var data_list = $("#frm-data").serialize();
     if($("#frm-data").data('bootstrapValidator').isValid()){
         console.log(data_list)
-
-        $('#frm-data').bootstrapValidator('resetForm')
-        alert('提交')
+        $.get('/contact',data_list,function (data) {
+            alert(data)
+        })
     }
 })
