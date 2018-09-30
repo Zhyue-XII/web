@@ -129,7 +129,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-MACHINA_FORUM_NAME = '康迪泰'
+MACHINA_FORUM_NAME = '康迪泰首页'
 
 
 # Static files (CSS, JavaScript, Images)
