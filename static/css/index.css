@@ -94,7 +94,6 @@
 .cover-bg{background: rgba(51,60,63,0.7);padding-top: 60px}
 .text,.img-box{
     float: left;
-    margin-top: 60px;
 }
 .text{
     width: 60%;
@@ -185,7 +184,7 @@ a:hover{text-decoration: none;color: white}
 .current-img{
     width: 33.33%;
     float: left;
-    padding: 60px 20px;
+    padding: 60px 20px 0;
 }
 .wu-text{
     width: 50%;
