@@ -32,6 +32,14 @@ $(function () {
                     },
                 }
             },
+            address: {
+                message: '用户名不能为空',//默认提示信息
+                validators: {
+                    notEmpty: {
+                        message: '公司地址必填不能为空'
+                    },
+                }
+            },
             email: {
                 validators: {
                     notEmpty: {
