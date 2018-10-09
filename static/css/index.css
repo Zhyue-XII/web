@@ -166,12 +166,13 @@ a:hover{text-decoration: none;color: white}
 
 .why-us{
     min-height: 500px;
-    background: white;
+    background-image: url("../img/bg4.jpg");
+    background-size: cover;
 }
 
 .cm-title{margin:70px 0 30px 0 }
 .act{
-    padding: 5% 0;
+    padding: 10% 0 5%;
 }
 
 
@@ -236,7 +237,7 @@ a:hover{text-decoration: none;color: white}
 
 /*新闻动态*/
 .news-container{
-    height: 300px;
+    height: 200px;
     overflow:hidden;
     position: relative;
 
@@ -248,7 +249,7 @@ a:hover{text-decoration: none;color: white}
 .new-text{
     width: 33.33%;
     float: left;
-    height: 300px;
+    height: 200px;
 }
 
 .new-text p{

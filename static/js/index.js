@@ -114,6 +114,12 @@ $("#sbm-btn").click(function () {
         console.log(data_list)
         $.get('/contact',data_list,function (data) {
             alert(data)
+            $("#frm-data").data("bootstrapValidator").resetForm();
+            $("#name").val("");
+            $("#tel").val("");
+            $("#company").val("");
+            $("#address").val("");
+            $("#email").val("");
         })
     }
 })

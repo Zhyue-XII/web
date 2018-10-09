@@ -17,8 +17,8 @@
 .team-desc{background-color: white;min-height: 200px}
 
 .team-desc-img img{
-    width: 70%;
-    margin-top: 40px;
+    width: 90%;
+    margin-top: 30px;
     transition: all .8s;
 }
 .team-desc-text{
@@ -36,24 +36,11 @@
     color: grey;
 }
 
-.our-team{
-    background-color: #f2f2f2;
-}
-
-.our-team-text{
-        padding: 5% 0 3% 0;
-}
 .our-team-text p:first-child,.contact-title p:first-child{
     font-size: 32px;
     letter-spacing: 2px;
 }
-.our-team-text p:nth-child(2),.underline{
-    width: 5%;
-    height: 1px;
-    border: 1px solid #f54e05;
-    margin: 10px auto;
-}
-.our-team-pic{padding-bottom: 5%}
+
 .pic-block{
     display: inline-block;
     margin: 0 3%;
