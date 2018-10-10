@@ -130,6 +130,7 @@ USE_L10N = True
 USE_TZ = True
 
 MACHINA_FORUM_NAME = '康迪泰首页'
+# MACHINA_BASE_TEMPLATE_NAME = 'case.html'
 
 
 # Static files (CSS, JavaScript, Images)
