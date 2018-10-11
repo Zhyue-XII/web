@@ -13,12 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.conf.urls import url
 from django.urls import path, include
 from extra_apps import xadmin
 from django.views.generic.base import TemplateView
-from machina.app import board
 from contact.urls import urlpatterns as contact_urls
+from forum.urls import urlpatterns as forum_urls
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
@@ -30,6 +29,6 @@ urlpatterns = [
     path('news/', TemplateView.as_view(template_name='news.html')),
     path('project/', TemplateView.as_view(template_name='project01.html')),
     path('price/', TemplateView.as_view(template_name='price.html')),
-    path('forum/', include(board.urls)),
+    # path('forum/', include(forum_urls)),
     path('contact/',  include(contact_urls))
 ]
