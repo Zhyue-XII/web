@@ -17,7 +17,7 @@ from django.urls import path, include
 from extra_apps import xadmin
 from django.views.generic.base import TemplateView
 from contact.urls import urlpatterns as contact_urls
-from forum.urls import urlpatterns as forum_urls
+# from forum.urls import urlpatterns as forum_urls
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
