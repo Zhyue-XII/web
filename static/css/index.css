@@ -21,6 +21,7 @@
      .text p{font-size: 25px !important;}
      .text span{display: none}
      .dp-block-text{margin: 20px 5% !important;}
+     .act{padding-top: 27% !important;}
 }
 @media (min-width: 768px) and (max-width: 991px) {
     .bg-service{
@@ -165,7 +166,6 @@ a:hover{text-decoration: none;color: white}
 }
 
 .why-us{
-    min-height: 500px;
     background-image: url("../img/bg4.jpg");
     background-size: cover;
 }
@@ -205,7 +205,6 @@ a:hover{text-decoration: none;color: white}
 .customer{background-image: url("../img/bg2.jpg");}
 .cm-comment{
     border-top: 2px solid gainsboro;
-    min-height: 300px;
 }
 .cm-pic{width: 30%}
 .cm-text{width: 70%}
@@ -240,7 +239,7 @@ a:hover{text-decoration: none;color: white}
     height: 200px;
     overflow:hidden;
     position: relative;
-
+    /*border: 1px solid hotpink;*/
 }
 .current-news{
     width: 300%;
