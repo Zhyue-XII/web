@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>论坛</title>
+    <link href="{% static 'bootstrap-dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/forum/base.css' %}">
+    <link rel="stylesheet" href="{% static 'layui/css/layui.css' %}">
+    <script src="{% static 'js/jquery-3.2.0.min.js' %}"></script>
+    <script src="{% static 'bootstrap-dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'layui/layui.js' %}"></script>
+    <script src="{% static 'bootstrap-dist/js/bootstrapValidator.min.js' %}"></script>
+    {% block css %}{% endblock %}
+</head>
+<body>
+    <nav class="nav">
+        <div class="container-fluid">
+            <div class="container nav-group">
+                <div class="title-block">
+                    <span>论坛</span>
+                </div>
+
+                <div class="menu">
+                    <ul>
+                        <li><a href="http://127.0.0.1:8000/forum/course">教程</a></li>
+                        <li><a href="http://127.0.0.1:8000/forum">帖子</a></li>
+                        <li><a href="http://127.0.0.1:8000">回网站</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="login-block">
+                    <p>你好,
+                        <span href="#" id="sel-block">
+                            {% if user.username %}
+                                {{ user.username }}
+                            {% else %}
+                                <a href="#" data-toggle="modal" data-target="#myModal">请登陆</a>
+                            {% endif %}
+                            <b class="caret"></b>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div id="login-option" class="login-option container">
+            <ul id="sel-option">
+                {% if user.username %}
+                    <li><a href="#" data-toggle="modal" data-target="#changePsd">修改密码</a></li>
+                    <li><a href="javascript:logout()">注销</a></li>
+                {% else %}
+                    <li><a href="#" data-toggle="modal" data-target="#registerModal">注册</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button id="hidden" type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        用户登陆
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <form id="frmLogin" class="form-horizontal">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="username" class="col-sm-2 control-label">用户名</label>
+                            <div class="col-sm-10">
+                                <input class="form-control re" id="username" name="username" value="" type="text">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="col-sm-2 control-label">密码</label>
+                            <div class="col-sm-10">
+                                <input class="form-control re" id="password" name="password" value="" type="password">
+                            </div>
+                        </div>
+                        <p style="text-align: center"><span id="mess" style="color: #a94442"></span></p>
+                        <p style="text-align: right"><button type="button" id="btnSave" class="layui-btn"> 保存 </button></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button id="hidden" type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        用户注册
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <form id="frmResister" class="form-horizontal">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="user_name" class="col-sm-2 control-label">用户名</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" id="user_name" name="username" value="" type="text">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password1" class="col-sm-2 control-label">密码</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" id="password1" name="password1" value="" type="password">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password2" class="col-sm-2 control-label">确认密码</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" id="password2" name="password2" value="" type="password">
+                            </div>
+                        </div>
+                        <p style="text-align: center"><span id="message" style="color: #a94442"></span></p>
+                        <p style="text-align: right"><button type="button" id="btn-sub" class="layui-btn"> 保存 </button></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="changePsd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button id="hidden" type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        修改密码
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <form id="frmPsd" class="form-horizontal">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="password0" class="col-sm-2 control-label">输入密码</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" id="password0" name="password0" value="" type="password">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password1" class="col-sm-2 control-label">新密码</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" id="password3" name="password1" value="" type="password">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password2" class="col-sm-2 control-label">确认密码</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" id="password4" name="password2" value="" type="password">
+                            </div>
+                        </div>
+                         <p style="text-align: center"><span id="res" style="color: #a94442"></span></p>
+                        <p style="text-align: right"><button type="button" id="btn-psd" class="layui-btn"> 提交 </button></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+<script>
+    $("#sel-block").hover(function () {
+        $("#sel-option").css({"display": "block"})
+    })
+    $("#sel-option").mouseleave(function () {
+        $("#sel-option").css({"display": "none"})
+    })
+</script>
+<script src="{% static 'js/forum/base.js' %}"></script>
+{% block script %}
+{% endblock %}
+</html>

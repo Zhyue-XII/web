@@ -22,6 +22,7 @@
      .text span{display: none}
      .dp-block-text{margin: 20px 5% !important;}
      .act{padding-top: 27% !important;}
+     .nav-ul a:hover{color: white !important;}
 }
 @media (min-width: 768px) and (max-width: 991px) {
     .bg-service{
@@ -52,6 +53,7 @@
     .text{width: 100% !important;text-align: center}
     .img-box{display: none}
     .text a{margin: 5% auto}
+    .nav-ul a:hover{color: white !important;}
 }
 @media (min-width: 991px) {
     /*main-page*/

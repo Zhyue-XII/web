@@ -1,0 +1,78 @@
+body{background: #f3f3f3}
+
+nav{
+    background: #22282d;
+    color: white;
+}
+.layui-form-label{
+    padding: 0 !important;
+}
+.menu li a,.login-block a,.login-option a{
+    color: white;
+}
+.title-block{
+    font-size: 27px;
+    line-height: 50px;
+}
+.title-block,.menu{
+    float: left;
+}
+.menu li{
+    display: inline-block;
+    padding: 0 30px;
+}
+.menu {
+    font-size: 17px;
+    line-height: 50px;
+    margin-left: 10%;
+}
+.login-block{
+    text-align: right;
+    font-size: 17px;
+    line-height: 50px;
+}
+.login-option{height: 56px}
+.login-option ul{
+    text-align: center;
+    background: #22282d;
+    padding: 0 2% 10px;
+    width: 106px;
+    float: right;
+    display: none;
+}
+.login-option li{
+    padding: 2px;
+}
+@media (max-width: 768px) {
+    nav {
+        background: #f54e05;
+    }
+    .title-block {
+        /*display: none;*/
+        float: left;
+    }
+    .menu{
+        /*margin-left: 0 !important;*/
+    }
+    .menu li {
+        /*display: block;*/
+        padding: 0 0 !important;
+    }
+    .login-block{
+        float: right;
+    }
+
+    .modal-content {
+        margin-top: 50%;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px){
+    nav {
+        background: #f54e05;
+    }
+}
+@media (min-width: 991px) {
+    .login-block ul{
+        display: none;
+    }
+}
