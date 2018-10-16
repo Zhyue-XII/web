@@ -1,0 +1,42 @@
+.layui-card-header{
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+}
+.card-body div{
+    border-bottom: 1px gainsboro dashed;
+    padding: 10px 0;
+}
+.card-body img{
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin-right: 2%;
+}
+h2 a:last-child{
+    max-width: 80%;
+    font-size: 16px;
+}
+.info span{
+    color: grey;
+    margin-right: 20px;
+}
+.img-wx{
+    padding: 10%;
+    text-align: center;
+}
+.img-wx img{
+    width: 258px;
+    height: 258px;
+}
+
+
+@media (max-width: 768px) {
+
+}
+@media (min-width: 768px) and (max-width: 991px){
+
+}
+@media (min-width: 991px) {
+
+}
