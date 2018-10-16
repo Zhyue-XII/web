@@ -7,24 +7,28 @@ nav{
 .layui-form-label{
     padding: 0 !important;
 }
-.menu li a,.login-option a{
+.login-option a{
     color: white;
 }
 .title-block{
     font-size: 27px;
     line-height: 50px;
 }
-.title-block,.menu{
+.title-block{
     float: left;
 }
 .menu li{
     display: inline-block;
-    padding: 0 30px;
+    padding-right: 5%;
+    float: left;
+}
+.forum-find p{
+    text-align: right;
+    line-height: 50px;
 }
 .menu {
     font-size: 17px;
     line-height: 50px;
-    margin-left: 10%;
 }
 .login-block{
     text-align: right;
@@ -38,6 +42,10 @@ nav{
     border: 1px solid gainsboro;
     background: white;
     display: none;
+}
+.forum-find{
+    height: 50px;
+    background: white;
 }
 .options li{
     padding: 0 15px;
