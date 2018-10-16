@@ -7,7 +7,7 @@ nav{
 .layui-form-label{
     padding: 0 !important;
 }
-.menu li a,.login-block a,.login-option a{
+.menu li a,.login-option a{
     color: white;
 }
 .title-block{
@@ -31,18 +31,21 @@ nav{
     font-size: 17px;
     line-height: 50px;
 }
-.login-option{height: 56px}
-.login-option ul{
+.options{
+    position: absolute;
+    right: 15px;
     text-align: center;
-    background: #22282d;
-    padding: 0 2% 10px;
-    width: 106px;
-    float: right;
+    border: 1px solid gainsboro;
+    background: white;
     display: none;
 }
-.login-option li{
-    padding: 2px;
+.options li{
+    padding: 0 15px;
 }
+option a{color: black !important;}
+
+.nav-group{position: relative}
+
 @media (max-width: 768px) {
     nav {
         background: #f54e05;
@@ -51,9 +54,7 @@ nav{
         /*display: none;*/
         float: left;
     }
-    .menu{
-        /*margin-left: 0 !important;*/
-    }
+
     .menu li {
         /*display: block;*/
         padding: 0 0 !important;
@@ -65,6 +66,10 @@ nav{
     .modal-content {
         margin-top: 50%;
     }
+    .hello{display: none}
+    .options li{
+        padding: 0 !important;
+    }
 }
 @media (min-width: 768px) and (max-width: 991px){
     nav {
@@ -72,7 +77,7 @@ nav{
     }
 }
 @media (min-width: 991px) {
-    .login-block ul{
-        display: none;
-    }
+    /*.login-block ul{*/
+        /*display: none;*/
+    /*}*/
 }
