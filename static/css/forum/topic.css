@@ -1,0 +1,52 @@
+.article{
+    padding: 2%;
+}
+.article h1{
+    font-size: 24px;
+    line-height: 36px;
+    padding-bottom: 1%;
+}
+.topic-data p{
+    float: right;
+}
+.detail-about{
+    background: #f8f8f8;
+    margin:2% 0;
+    overflow: hidden;
+    padding: 2%;
+}
+.detail-about img,.qaq img{
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 2%;
+}
+.topic-text {
+    padding-bottom: 5%;
+}
+.qaq{
+    overflow: hidden;
+    margin-top: 2%;
+}
+.qa{
+    padding: 0 1%;
+    border-bottom: 1px dashed gainsboro;
+}
+.qa p{
+    padding: 5% 0;
+}
+.qa button{
+    height: 35px;
+    background: none;
+    border: none;
+    outline: none;
+    text-align: left;
+}
+.qa i{
+    line-height: 35px;
+}
+button span{
+    float: right;
+    line-height: 35px;
+    margin-left: 10px;
+}

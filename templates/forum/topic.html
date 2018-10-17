@@ -1,0 +1,89 @@
+{% extends 'forum/base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/forum/topic.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="layui-row layui-col-space15" style="padding: 20px 0">
+        <div class="layui-col-md8">
+            <div class="layui-card article">
+                <h1>{{ data.topic_title }}</h1>
+                <div class="topic-data">
+                    <span class="layui-badge layui-bg-green fly-detail-column">讨论</span>
+                    <p><i class="layui-icon layui-icon-praise"> {{ data.like }} </i></p>
+                </div>
+                <div class="detail-about">
+                    <img src="{% static 'img/u.gif' %}" alt="">
+                    <p style="color: #01AAED;line-height: 25px">{{ data.user.username }}</p>
+                    <p style="color: grey">{{ data.issue_time }}</p>
+                </div>
+                <div class="topic-text">
+                    {{ data.topic_text }}
+                </div>
+            </div>
+
+            <div class="layui-card article">
+                <fieldset class="layui-elem-field layui-field-title" style="text-align: center;">
+                    <legend>回帖</legend>
+                </fieldset>
+                <div class="qaq">
+                    <img src="{% static 'img/u.gif' %}" alt="">
+                    <p style="color: #01AAED;line-height: 25px">{{ data.user.username }}</p>
+                    <p style="color: grey">{{ data.issue_time }}</p>
+
+                    <div class="qa">
+                        <p>我不子奥克兰后来看钉钉看到很多空军基地的基本都差不多</p>
+                        <div style="">
+                            <button><i class="glyphicon glyphicon glyphicon-thumbs-up"></i><span>点赞</span></button>
+                            <button style="margin-left: 5%"><i class="glyphicon glyphicon glyphicon glyphicon-leaf"></i><span>回复</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="qaq">
+                    <img src="{% static 'img/u.gif' %}" alt="">
+                    <p style="color: #01AAED;line-height: 25px">{{ data.user.username }}</p>
+                    <p style="color: grey">{{ data.issue_time }}</p>
+
+                    <div class="qa">
+                        <p>我不子奥克兰后来看钉钉看到很多空军基地的基本都差不多</p>
+                        <div style="">
+                            <button><i class="glyphicon glyphicon glyphicon-thumbs-up"></i><span>点赞</span></button>
+                            <button style="margin-left: 5%"><i class="glyphicon glyphicon glyphicon glyphicon-leaf"></i><span>回复</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="qaq">
+                    <img src="{% static 'img/u.gif' %}" alt="">
+                    <p style="color: #01AAED;line-height: 25px">{{ data.user.username }}</p>
+                    <p style="color: grey">{{ data.issue_time }}</p>
+
+                    <div class="qa">
+                        <p>我不子奥克兰后来看钉钉看到很多空军基地的基本都差不多</p>
+                        <div style="">
+                            <button><i class="glyphicon glyphicon glyphicon-thumbs-up"></i><span>点赞</span></button>
+                            <button style="margin-left: 5%"><i class="glyphicon glyphicon glyphicon glyphicon-leaf"></i><span>回复</span></button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-header">卡片面板</div>
+                <div class="layui-card-body">
+                    结合 layui 的栅格系统<br>
+                    轻松实现响应式布局
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block script %}
+
+<script>
+</script>
+{% endblock %}
