@@ -9,35 +9,17 @@
                 <div class="layui-card">
                     <div class="layui-card-header">帖子</div>
                     <div class="layui-card-body card-body">
-                        <div>
-                            <a href="#"><img src="{% static 'img/u.gif' %}" alt=""></a>
-                            <h2><a class="layui-badge"> 讨论 </a> <a href="#">免费版有物联设备嘛？</a></h2>
-                            <p class="info"><span>两生花</span> <span>2018-10-10</span> <span><i class="layui-icon layui-icon-praise"></i>20</span></p>
-                        </div>
-
-                        <div>
-                            <a href="#"><img src="{% static 'img/u.gif' %}" alt=""></a>
-                            <h2><a class="layui-badge"> 讨论 </a> <a href="#">免费版有物联设备嘛？</a></h2>
-                            <p class="info"><span>两生花</span> <span>2018-10-10</span> <span><i class="layui-icon layui-icon-praise"></i>20</span></p>
-                        </div>
-
-                         <div>
-                            <a href="#"><img src="{% static 'img/u.gif' %}" alt=""></a>
-                            <h2><a class="layui-badge"> 讨论 </a> <a href="#">免费版有物联设备嘛？</a></h2>
-                            <p class="info"><span>两生花</span> <span>2018-10-10</span> <span><i class="layui-icon layui-icon-praise"></i>20</span></p>
-                        </div>
-
-                         <div>
-                            <a href="#"><img src="{% static 'img/u.gif' %}" alt=""></a>
-                            <h2><a class="layui-badge"> 讨论 </a> <a href="#">免费版有物联设备嘛？</a></h2>
-                            <p class="info"><span>两生花</span> <span>2018-10-10</span> <span><i class="layui-icon layui-icon-praise"></i>20</span></p>
-                        </div>
-
-                         <div>
-                            <a href="#"><img src="{% static 'img/u.gif' %}" alt=""></a>
-                            <h2><a class="layui-badge"> 讨论 </a> <a href="#">免费版有物联设备嘛？</a></h2>
-                            <p class="info"><span>两生花</span> <span>2018-10-10</span> <span><i class="layui-icon layui-icon-praise"></i>20</span></p>
-                        </div>
+                        {% if data != '' %}
+                            {% for d in data %}
+                                <div>
+                                    <a href="#"><img src="{% static 'img/u.gif' %}" alt=""></a>
+                                    <h2><a class="layui-badge"> 讨论 </a> <a href="http://127.0.0.1:8000/forum/topic?id={{ d.id }}">{{ d.topic_title }}</a></h2>
+                                    <p class="info"><span>{{ d.user__username }}</span> <span>{{ d.issue_time }}</span> <span><i class="layui-icon layui-icon-praise"></i>{{ d.like }}</span></p>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <span>没有更多了</span>
+                        {% endif %}
                     </div>
                 </div>
             </div>

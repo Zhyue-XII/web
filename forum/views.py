@@ -5,6 +5,8 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.views import login as sys_login, logout as sys_logout
+from forum.forms.topic import TopicForm
+from forum.models import Plate, Topic
 
 
 @csrf_exempt
@@ -57,15 +59,19 @@ def change_password(request):
 
 
 def post_topic(request):
-    return render(request, 'forum/topic.html')
+    id = request.GET.get("id")
+    data = Topic.objects.get(id=id)
+    return render(request, 'forum/topic.html', {'data': data})
 
 
 def edit_topic(request):
-    return render(request, 'forum/edit.html')
+    data = Plate.objects.all()
+    return render(request, 'forum/edit.html', {'data': data})
 
 
 def get_topic(request):
-    return render(request, 'forum/forums.html')
+    data = Topic.objects.all().values('id', 'topic_title', 'issue_time', 'like', 'user__username')
+    return render(request, 'forum/forums.html', {'data': data})
 
 
 def course(request):
