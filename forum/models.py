@@ -27,3 +27,15 @@ class Topic(models.Model):
 
     def __str__(self):
         return self.topic_title
+
+
+class Discuss(models.Model):
+    discuss_detail = models.TextField()
+    user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
+    topic = models.ForeignKey(Topic, null=True, on_delete=models.SET_NULL)
+
+
+class Replay(models.Model):
+    replay_detail = models.TextField()
+    discus = models.ForeignKey(Discuss, null=True, on_delete=models.SET_NULL)
+    user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)

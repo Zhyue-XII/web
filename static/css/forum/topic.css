@@ -33,7 +33,7 @@
     border-bottom: 1px dashed gainsboro;
 }
 .qa p{
-    padding: 5% 0;
+    padding: 5% 0 3%;
 }
 .qa button{
     height: 35px;
@@ -45,8 +45,24 @@
 .qa i{
     line-height: 35px;
 }
+.replay-block span{
+    color: #009688;
+}
+.replay-block a:hover{
+    text-decoration: none;
+}
 button span{
     float: right;
     line-height: 35px;
     margin-left: 10px;
+}
+.discuss{
+    margin-top: 5%;
+}
+textarea.discuss-detail {
+    width: 100%;
+    min-height: 150px;
+    padding: 1%;
+    margin-bottom: 1%;
+    border: 1px solid gainsboro;
 }

@@ -7,7 +7,7 @@
     <div class="layui-row layui-col-space15" style="padding: 20px 0">
         <div class="layui-col-md8">
             <div class="layui-card article">
-                <h1>{{ data.topic_title }}</h1>
+                <h1>{{ data.topic_title }}<span style="float: right; font-size: 15px"> 楼主</span></h1>
                 <div class="topic-data">
                     <span class="layui-badge layui-bg-green fly-detail-column">讨论</span>
                     <p><i class="layui-icon layui-icon-praise"> {{ data.like }} </i></p>
@@ -26,49 +26,49 @@
                 <fieldset class="layui-elem-field layui-field-title" style="text-align: center;">
                     <legend>回帖</legend>
                 </fieldset>
-                <div class="qaq">
-                    <img src="{% static 'img/u.gif' %}" alt="">
-                    <p style="color: #01AAED;line-height: 25px">{{ data.user.username }}</p>
-                    <p style="color: grey">{{ data.issue_time }}</p>
+                <div class="replay">
 
-                    <div class="qa">
-                        <p>我不子奥克兰后来看钉钉看到很多空军基地的基本都差不多</p>
-                        <div style="">
-                            <button><i class="glyphicon glyphicon glyphicon-thumbs-up"></i><span>点赞</span></button>
-                            <button style="margin-left: 5%"><i class="glyphicon glyphicon glyphicon glyphicon-leaf"></i><span>回复</span></button>
-                        </div>
-                    </div>
+                    {% if disc != '' %}
+                        {% for d in disc %}
+                            <div class="qaq">
+                                <img src="{% static 'img/u.gif' %}" alt="">
+                                <p style="color: #01AAED;line-height: 25px">{{ d.user }} <span
+                                        style="float: right">{{ forloop.counter }}楼</span></p>
+                                <p style="color: grey">{{ d.time }}</p>
+
+                                <div class="qa">
+                                    <p>{{ d.detail }}</p>
+                                    {% for r in d.rpy %}
+                                        <div class="replay-block">
+                                            <a href="">
+                                                <span>{{ r.user__username }}</span>回复<span>{{ d.user }}</span>:
+                                                {{ r.replay_detail }} </a>
+                                        </div>
+                                    {% endfor %}
+                                    <div>
+                                        <button><i class="glyphicon glyphicon glyphicon-thumbs-up"></i><span>点赞</span>
+                                        </button>
+                                        <button style="margin-left: 5%">
+                                            <i class="glyphicon glyphicon glyphicon glyphicon-leaf"></i><span>评论</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>暂无评论</p>
+                    {% endif %}
+                    <p>{{ mess }}</p>
+
                 </div>
-
-                <div class="qaq">
-                    <img src="{% static 'img/u.gif' %}" alt="">
-                    <p style="color: #01AAED;line-height: 25px">{{ data.user.username }}</p>
-                    <p style="color: grey">{{ data.issue_time }}</p>
-
-                    <div class="qa">
-                        <p>我不子奥克兰后来看钉钉看到很多空军基地的基本都差不多</p>
-                        <div style="">
-                            <button><i class="glyphicon glyphicon glyphicon-thumbs-up"></i><span>点赞</span></button>
-                            <button style="margin-left: 5%"><i class="glyphicon glyphicon glyphicon glyphicon-leaf"></i><span>回复</span></button>
-                        </div>
-                    </div>
+                <div class="discuss">
+                    <form id="frmDiscuss">
+                        {% csrf_token %}
+                        <input type="hidden" name="id" value="{{ id }}">
+                        <textarea name="discuss-detail" class="discuss-detail" placeholder="添加评论.."></textarea>
+                    </form>
+                    <button id="discuss-btn" class="layui-btn">提交评论</button>
                 </div>
-
-                <div class="qaq">
-                    <img src="{% static 'img/u.gif' %}" alt="">
-                    <p style="color: #01AAED;line-height: 25px">{{ data.user.username }}</p>
-                    <p style="color: grey">{{ data.issue_time }}</p>
-
-                    <div class="qa">
-                        <p>我不子奥克兰后来看钉钉看到很多空军基地的基本都差不多</p>
-                        <div style="">
-                            <button><i class="glyphicon glyphicon glyphicon-thumbs-up"></i><span>点赞</span></button>
-                            <button style="margin-left: 5%"><i class="glyphicon glyphicon glyphicon glyphicon-leaf"></i><span>回复</span></button>
-                        </div>
-                    </div>
-                </div>
-
-
             </div>
         </div>
         <div class="layui-col-md4">
@@ -83,7 +83,7 @@
     </div>
 {% endblock %}
 {% block script %}
-
+<script src="{% static 'js/forum/topic.js' %}"></script>
 <script>
 </script>
 {% endblock %}

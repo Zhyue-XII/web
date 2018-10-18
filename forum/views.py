@@ -6,7 +6,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.views import login as sys_login, logout as sys_logout
 from forum.forms.topic import TopicForm
-from forum.models import Plate, Topic
+from forum.models import Plate, Topic, Discuss, Replay
 
 
 @csrf_exempt
@@ -61,7 +61,44 @@ def change_password(request):
 def post_topic(request):
     id = request.GET.get("id")
     data = Topic.objects.get(id=id)
-    return render(request, 'forum/topic.html', {'data': data})
+    discusses = Discuss.objects.filter(topic_id=id).values('id', 'user__username', 'topic_id',
+                                                           'discuss_detail', 'topic__issue_time')
+    disc = []
+    mess = ''
+    if discusses:
+        for d in discusses:
+            replays = Replay.objects.filter(discus_id=d['id']).values('user__username', 'replay_detail')
+            disc.append({
+                'id': d['id'],
+                'user': d['user__username'],
+                'detail': d['discuss_detail'],
+                'time': d['topic__issue_time'],
+                'rpy': replays
+            })
+    else:
+        mess = '暂无评论'
+    return render(request, 'forum/topic.html',
+                  {
+                      'data': data,
+                      'disc': disc,
+                      'mess': mess,
+                      'id': id
+                  })
+
+
+@csrf_exempt
+def post_discuss(request):
+    id = request.POST.get('id')
+    discuss_detail = request.POST.get('discuss-detail')
+    user = request.user.username
+    print(user)
+    if user:
+        discuss = Discuss.objects.create(topic_id=id, discuss_detail=discuss_detail)
+        discuss.user_id = request.user
+        discuss.save()
+        return JsonResponse({'code': 200, 'mess': 'succes'})
+    else:
+        return JsonResponse({'code': 204, 'mess': '请先登陆'})
 
 
 def edit_topic(request):
@@ -69,8 +106,24 @@ def edit_topic(request):
     return render(request, 'forum/edit.html', {'data': data})
 
 
+@csrf_exempt
+def issue_topic(request):
+    print(2)
+    topic_title = request.POST.get('topic_title')
+    topic_text = request.POST.get('topic_text')
+    plate_name = request.POST.get('plate_name')
+    user = request.user.username
+    if user:
+        topic = Topic.objects.create(topic_title=topic_title, topic_text=topic_text, plate_id=plate_name)
+        topic.user_id = request.user
+        topic.save()
+        return JsonResponse({'code': 200, 'mess': 'success'})
+    else:
+        return JsonResponse({'code': 204, 'mess': '请先登录'})
+
+
 def get_topic(request):
-    data = Topic.objects.all().values('id', 'topic_title', 'issue_time', 'like', 'user__username')
+    data = Topic.objects.all().values('id', 'topic_title', 'issue_time', 'like', 'user__username').order_by('-id')
     return render(request, 'forum/forums.html', {'data': data})
 
 

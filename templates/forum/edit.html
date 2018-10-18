@@ -11,29 +11,31 @@
             </ul>
             <div class="layui-tab-content" style="height: 100px;">
                 <div class="layui-tab-item layui-show">
-                    <form id="frmEdit" class="layui-form">
+                    <form id="frmEdit" class=" layui-form">
+                        {% csrf_token %}
                         <div class="layui-row pd layui-col-space15">
-                            <div class="layui-col-md3">
-                                <label class="layui-form-label-x">所在模块</label>
+                            <div class="form-group layui-col-md3">
+                                <label for="plate_name" class="label-x control-label">所属板块</label>
                                 <div class="layui-input-block">
-                                    <select>
-                                        <option value="0">牛羊肉加工</option>
-                                        <option value="1">猪肉加工</option>
+                                    <select name="plate_name" id="plate_name">
+                                        {% for d in data %}
+                                            <option value="{{ d.id }}">{{ d.name }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                             </div>
-                            <div class="layui-col-md9">
-                                <label for="" class="layui-form-label-x">输入标题</label>
-                                <div class="layui-input-block">
-                                    <input class="layui-input">
-                                </div>
 
+                            <div class="form-group layui-col-md9">
+                                <label for="topic_title" class="label-x control-label">标题</label>
+                                <div class="layui-input-block">
+                                    <input class="form-control layui-input" id="topic_title" name="topic_title" value="">
+                                </div>
                             </div>
                         </div>
-                        <textarea id="demo" style="display: none;"></textarea>
-                        <button class="layui-btn">立即发布</button>
-                    </form>
+                        <textarea class="layui-textarea" name="topic_text" ></textarea>
 
+                        <button type="button" id="edit-topic-btn" class="layui-btn"> 保存 </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -41,12 +43,5 @@
 
 {% endblock %}
 {% block script %}
-    <script>
-        layui.use('layedit', function () {
-            var layedit = layui.layedit;
-            layedit.build('demo');
-        });
-
-
-    </script>
+    <script src="{% static 'js/forum/edit.js' %}"></script>
 {% endblock %}

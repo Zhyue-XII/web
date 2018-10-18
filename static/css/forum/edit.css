@@ -7,7 +7,7 @@
     display: none;
 }
 
-.layui-form-label-x {
+.label-x {
     float: left;
     display: block;
     width: 110px;
@@ -21,7 +21,12 @@
 #frmEdit button{
     margin-top: 20px;
 }
-
+.layui-textarea {
+    min-height: 260px;
+}
+.form-horizontal .control-label{
+    padding-top: 0 !important;
+}
 @media (max-width: 768px) {
     .pd{
         margin-bottom: 2%;
