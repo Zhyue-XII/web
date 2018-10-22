@@ -1,5 +1,4 @@
 function replayMess(id){
-    console.log(id)
     $('#discussId').val(id)
     $(".replay-dialog").css({'display': 'block'})
 };
@@ -46,19 +45,28 @@ $("#btnRpy").click(function () {
     $("#frmReplay").bootstrapValidator('validate');
     if($("#frmReplay").data('bootstrapValidator').isValid()){
         $.post('relaydiscuss', $('#frmReplay').serialize(), function (ret) {
-            console.log($('#frmReplay').serialize())
             if(ret.code === 200){
                 window.location.reload()
             } else {
                 alert(ret.mess)
-                // layui.use('layer', function () {
-                //     var layer = layui.layer;
-                //     layer.msg(ret.mess, {
-                //         time: 2000,
-                //         btn: ['明白了']
-                //     });
-                // })
             }
         })
     }
-})
+});
+
+function dz(id) {
+    $.get('like', {'id':id}, function (ret) {
+        if(ret.code === 200){
+            window.location.reload()
+        } else {
+            alert(ret.mess)
+        }
+    })
+}
+
+function replayUser(name) {
+    console.log(name)
+    var r = '@'+name+':';
+    $('.discuss-detail').val(r)
+
+}

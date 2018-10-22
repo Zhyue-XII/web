@@ -50,6 +50,9 @@
                 <div class="topic-text">
                     {{ data.topic_text }}
                 </div>
+
+                <button class="topic-dz" style="background: none" onclick="dz({{ data.id }})"><i class="layui-icon layui-icon-praise t-dz"></i>
+                    <span id="like">赞一下</span></button>
             </div>
 
             <div class="layui-card article">
@@ -70,7 +73,7 @@
                                     <p>{{ d.detail }}</p>
                                     {% for r in d.rpy %}
                                         <div class="replay-block">
-                                            <a href="#" onclick="replayMess({{ r.user_id }})" >
+                                            <a href="#frmDiscuss" onclick="replayUser('{{ r.user__username }}')">
                                                 <span>{{ r.user__username }}</span>回复<span>{{ d.user }}</span>:
                                                 {{ r.replay_detail }} </a>
                                         </div>

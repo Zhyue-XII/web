@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import post_topic, edit_topic, course, login, logout, register, get_topic, change_password, post_discuss, \
-    issue_topic, replay_discuss
+    issue_topic, replay_discuss, like_dz
 
 urlpatterns = [
     path('login', login, name='login'),
@@ -13,5 +13,6 @@ urlpatterns = [
     path('relaydiscuss', replay_discuss, name='replay_discuss'),  # 回复评论
     path('edit', edit_topic, name='edit_topic'),  # 跳转页面
     path('issuetopic', issue_topic, name='issue_topic'),  # 发表文章
+    path('like', like_dz, name='like_dz'),  # 点赞
     path('course', course, name='course'),  # 教程页
 ]

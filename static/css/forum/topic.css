@@ -47,11 +47,6 @@
 .replay-block a:hover{
     text-decoration: none;
 }
-button span{
-    float: right;
-    line-height: 35px;
-    margin-left: 10px;
-}
 .discuss{
     margin-top: 5%;
 }
@@ -74,6 +69,15 @@ textarea.discuss-detail {
 #frmReplay textarea{
     background: none;
     color: white;
+}
+.t-dz{
+    line-height: 22px;
+    margin-right: 5px;
+    float: left;
+}
+.article button{
+    outline: none;
+    border: 0;
 }
 @media (max-width: 768px) {
     .replay-dialog{

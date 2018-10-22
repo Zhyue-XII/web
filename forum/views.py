@@ -147,5 +147,17 @@ def get_topic(request):
     return render(request, 'forum/forums.html', {'data': data})
 
 
+def like_dz(request):
+    id = request.GET.get('id')
+    topic = Topic.objects.get(id=id)
+    user = request.user.username
+    if user:
+        topic.like += 1
+        topic.save()
+        return JsonResponse({"code": 200, 'mess': '已赞'})
+    else:
+        return JsonResponse({'code': 201, 'mess': '请登录'})
+
+
 def course(request):
     return render(request, 'forum/course.html')
