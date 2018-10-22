@@ -4,12 +4,42 @@
     <link rel="stylesheet" href="{% static 'css/forum/topic.css' %}">
 {% endblock %}
 {% block content %}
+    <div style="position: relative">
+        <div class="replay-dialog">
+            <form id="frmReplay" class="form-horizontal">
+                {% csrf_token %}
+                <input id="discussId" type="hidden" name="discussId" value="">
+                <div class="form-group">
+                    <label for="replay" class="control-label"></label>
+                    <div class="col-sm-12">
+                      <textarea class="form-control layui-textarea" id="replay" name="replay"></textarea>
+                    </div>
+
+                </div>
+                <p align="right">
+                    <button type="button" id="btnRpy" class="layui-btn layui-btn-primary layui-btn-sm"> 保存
+                    </button>
+                    <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" id="removeRpy">
+                        取消
+                    </button>
+                </p>
+            </form>
+        </div>
+    </div>
+
     <div class="layui-row layui-col-space15" style="padding: 20px 0">
         <div class="layui-col-md8">
             <div class="layui-card article">
                 <h1>{{ data.topic_title }}<span style="float: right; font-size: 15px"> 楼主</span></h1>
                 <div class="topic-data">
-                    <span class="layui-badge layui-bg-green fly-detail-column">讨论</span>
+                    {% if data.plate_id == 1 %}
+                        <a class="layui-badge layui-bg-green">牛羊</a>
+                    {% elif data.plate_id == 2 %}
+                        <a class="layui-badge">猪肉</a>
+                    {% else %}
+                        <a class="layui-badge layui-bg-blue">电商</a>
+                    {% endif %}
+{#                    <span class="layui-badge layui-bg-green fly-detail-column">讨论</span>#}
                     <p><i class="layui-icon layui-icon-praise"> {{ data.like }} </i></p>
                 </div>
                 <div class="detail-about">
@@ -40,17 +70,18 @@
                                     <p>{{ d.detail }}</p>
                                     {% for r in d.rpy %}
                                         <div class="replay-block">
-                                            <a href="">
+                                            <a href="#" onclick="replayMess({{ r.user_id }})" >
                                                 <span>{{ r.user__username }}</span>回复<span>{{ d.user }}</span>:
                                                 {{ r.replay_detail }} </a>
                                         </div>
                                     {% endfor %}
-                                    <div>
-                                        <button><i class="glyphicon glyphicon glyphicon-thumbs-up"></i><span>点赞</span>
-                                        </button>
-                                        <button style="margin-left: 5%">
+                                    <div class="dz">
+                                        <a href="">
+                                            <i class="glyphicon glyphicon glyphicon-thumbs-up"></i><span>点赞</span>
+                                        </a>
+                                        <a href="#" onclick="replayMess({{ d.id }})" data-toggle="modal" data-target="#replayModal">
                                             <i class="glyphicon glyphicon glyphicon glyphicon-leaf"></i><span>评论</span>
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -62,6 +93,7 @@
 
                 </div>
                 <div class="discuss">
+
                     <form id="frmDiscuss">
                         {% csrf_token %}
                         <input type="hidden" name="id" value="{{ id }}">

@@ -13,8 +13,19 @@
                             {% for d in data %}
                                 <div>
                                     <a href="#"><img src="{% static 'img/u.gif' %}" alt=""></a>
-                                    <h2><a class="layui-badge"> 讨论 </a> <a href="http://127.0.0.1:8000/forum/topic?id={{ d.id }}">{{ d.topic_title }}</a></h2>
-                                    <p class="info"><span>{{ d.user__username }}</span> <span>{{ d.issue_time }}</span> <span><i class="layui-icon layui-icon-praise"></i>{{ d.like }}</span></p>
+                                    <h2>
+                                        {% if d.plate_id == 1 %}
+                                            <a class="layui-badge layui-bg-green">牛羊</a>
+                                        {% elif d.plate_id == 2 %}
+                                            <a class="layui-badge">猪肉</a>
+                                        {% else %}
+                                            <a class="layui-badge layui-bg-blue">电商</a>
+                                        {% endif %}
+                                        <a href="http://127.0.0.1:8000/forum/topic?id={{ d.id }}">{{ d.topic_title }}</a>
+                                    </h2>
+                                    <p class="info"><span style="color: black">{{ d.user__username }}</span>
+                                        <span>{{ d.issue_time }}</span> <span style="float: right">
+                                            <i class="layui-icon layui-icon-praise"></i>{{ d.like }}</span></p>
                                 </div>
                             {% endfor %}
                         {% else %}

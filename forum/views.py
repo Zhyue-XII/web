@@ -58,7 +58,24 @@ def change_password(request):
         return JsonResponse({"code": 204, "mess": "密码输入错误"})
 
 
+@csrf_exempt
+def replay_discuss(request):
+    """回复评论"""
+    id = request.POST.get('discussId')
+    replay_detail = request.POST.get('replay')
+    user = request.user.username
+    if user:
+        replay = Replay.objects.create(replay_detail=replay_detail)
+        replay.user_id = request.user
+        replay.discus_id = id
+        replay.save()
+        return JsonResponse({'code': 200, 'mess': 'success'})
+    else:
+        return JsonResponse({'code': 204, 'mess': '请先登陆'})
+
+
 def post_topic(request):
+    """获取文章及评论信息"""
     id = request.GET.get("id")
     data = Topic.objects.get(id=id)
     discusses = Discuss.objects.filter(topic_id=id).values('id', 'user__username', 'topic_id',
@@ -67,8 +84,8 @@ def post_topic(request):
     mess = ''
     if discusses:
         for d in discusses:
-            replays = Replay.objects.filter(discus_id=d['id']).values('user__username', 'replay_detail')
-            disc.append({
+            replays = Replay.objects.filter(discus_id=d['id']).values('user__username', 'replay_detail', 'user_id')
+            disc.append({  # 转化数据格式
                 'id': d['id'],
                 'user': d['user__username'],
                 'detail': d['discuss_detail'],
@@ -88,6 +105,7 @@ def post_topic(request):
 
 @csrf_exempt
 def post_discuss(request):
+    """发表评论"""
     id = request.POST.get('id')
     discuss_detail = request.POST.get('discuss-detail')
     user = request.user.username
@@ -108,7 +126,7 @@ def edit_topic(request):
 
 @csrf_exempt
 def issue_topic(request):
-    print(2)
+    """发布帖子"""
     topic_title = request.POST.get('topic_title')
     topic_text = request.POST.get('topic_text')
     plate_name = request.POST.get('plate_name')
@@ -123,7 +141,9 @@ def issue_topic(request):
 
 
 def get_topic(request):
-    data = Topic.objects.all().values('id', 'topic_title', 'issue_time', 'like', 'user__username').order_by('-id')
+    """社区首页降序查询"""
+    data = Topic.objects.all().values('id', 'topic_title', 'issue_time', 'like', 'user__username', 'plate_id').order_by(
+        '-id')
     return render(request, 'forum/forums.html', {'data': data})
 
 

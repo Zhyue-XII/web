@@ -35,12 +35,8 @@
 .qa p{
     padding: 5% 0 3%;
 }
-.qa button{
-    height: 35px;
-    background: none;
-    border: none;
-    outline: none;
-    text-align: left;
+.dz a{
+
 }
 .qa i{
     line-height: 35px;
@@ -65,4 +61,34 @@ textarea.discuss-detail {
     padding: 1%;
     margin-bottom: 1%;
     border: 1px solid gainsboro;
+}
+.replay-dialog{
+    background: grey;
+    padding: 20px;
+    opacity: 0.8;
+    position: fixed;
+    z-index: 5;
+    top: 35%;
+    display: none;
+}
+#frmReplay textarea{
+    background: none;
+    color: white;
+}
+@media (max-width: 768px) {
+    .replay-dialog{
+        width: 92%;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px){
+    .replay-dialog{
+        width: 500px;
+        left: 25%;
+    }
+}
+@media (min-width: 991px) {
+    .replay-dialog{
+        width: 500px;
+        left: 34%;
+    }
 }
