@@ -11,31 +11,37 @@
             </ul>
             <div class="layui-tab-content" style="height: 100px;">
                 <div class="layui-tab-item layui-show">
-                    <form id="frmEdit" class=" layui-form">
-                        {% csrf_token %}
-                        <div class="layui-row pd layui-col-space15">
-                            <div class="form-group layui-col-md3">
-                                <label for="plate_name" class="label-x control-label">所属板块</label>
-                                <div class="layui-input-block">
-                                    <select name="plate_name" id="plate_name">
-                                        {% for d in data %}
-                                            <option value="{{ d.id }}">{{ d.name }}</option>
-                                        {% endfor %}
+                        <form id="frmEdit">
+                            {% csrf_token %}
+                            <div class="form-group">
+{#                                <label for="plate" class="control-label">选择板块</label>#}
+                                <div>
+                                    <select class="form-control" id="plate" name="plate">
+                                        <option value="0">===请选择所属模块===</option>
+                                        <option value="1">牛羊肉加工信息管理系统</option>
+                                        <option value="2">猪工信息管理系统</option>
+                                        <option value="3">电商管理平台</option>
+
                                     </select>
                                 </div>
                             </div>
 
-                            <div class="form-group layui-col-md9">
-                                <label for="topic_title" class="label-x control-label">标题</label>
-                                <div class="layui-input-block">
-                                    <input class="form-control layui-input" id="topic_title" name="topic_title" value="">
+                            <div class="form-group">
+                                <div>
+                                    <input class="form-control" id="topic_title" name="topic_title" placeholder="请输入标题.."/>
                                 </div>
                             </div>
-                        </div>
-                        <textarea class="layui-textarea" name="topic_text" ></textarea>
 
-                        <button type="button" id="edit-topic-btn" class="layui-btn"> 保存 </button>
-                    </form>
+                            <div class="form-group">
+                                <div>
+                                    <textarea class="form-control topic-text" id="topic_text" name="topic_text" placeholder="请输入内容"></textarea>
+                                </div>
+                            </div>
+                            <button type="button" id="edit-topic-btn" class="layui-btn"> 保存</button>
+                            <div class="form-group col-md-12">
+
+                            </div>
+                        </form>
                 </div>
             </div>
         </div>
