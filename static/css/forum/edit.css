@@ -6,14 +6,14 @@
 .forum-find button{
     display: none;
 }
-#frmEdit button{
-    margin-top: 20px;
-}
 .topic-text {
     min-height: 260px;
 }
 .form-horizontal .control-label{
     padding-top: 0 !important;
+}
+.form-control{
+    border-radius: 0 !important;
 }
 @media (max-width: 768px) {
     .pd{

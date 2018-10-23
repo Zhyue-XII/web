@@ -7,7 +7,7 @@
     <div style="padding: 20px 0" class="layui-row layui-col-space15">
          <div class="layui-col-md8">
                 <div class="layui-card">
-                    <div class="layui-card-header">帖子</div>
+                    <div class="layui-card-header">问题</div>
                     <div class="layui-card-body card-body">
                         {% if data != '' %}
                             {% for d in data %}
@@ -15,17 +15,18 @@
                                     <a href="#"><img src="{% static 'img/u.gif' %}" alt=""></a>
                                     <h2>
                                         {% if d.plate_id == 1 %}
-                                            <a class="layui-badge layui-bg-green">牛羊</a>
-                                        {% elif d.plate_id == 2 %}
-                                            <a class="layui-badge">猪肉</a>
+                                            <a class="layui-badge layui-bg-green">提问</a>
                                         {% else %}
-                                            <a class="layui-badge layui-bg-blue">电商</a>
+                                            <a class="layui-badge">精贴</a>&nbsp;<a class="layui-badge layui-bg-green">提问</a>
                                         {% endif %}
                                         <a href="/forum/topic?id={{ d.id }}">{{ d.topic_title }}</a>
                                     </h2>
                                     <p class="info"><span style="color: black">{{ d.user__username }}</span>
-                                        <span>{{ d.issue_time }}</span> <span style="float: right">
-                                            <i class="layui-icon layui-icon-praise"></i>{{ d.like }}</span></p>
+                                        <span>{{ d.issue_time }}</span>
+                                        <span style="float: right">
+                                            <a href="javascript:dz({{ d.id }})"><i class="layui-icon layui-icon-praise"></i>{{ d.like }}</a>
+                                        </span>
+                                    </p>
                                 </div>
                             {% endfor %}
                         {% else %}

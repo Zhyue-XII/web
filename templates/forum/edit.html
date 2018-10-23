@@ -7,7 +7,7 @@
     <div class="edit-topic layui-row layui-col-space15">
         <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
             <ul class="layui-tab-title">
-                <li class="layui-this">发表帖子</li>
+                <li class="layui-this">提问问题</li>
             </ul>
             <div class="layui-tab-content">
                 <div class="layui-tab-item layui-show">
@@ -16,9 +16,9 @@
                         <div class="form-group">
                             <div>
                                 <select class="form-control" id="plate" name="plate">
-                                    <option value="1">牛羊肉加工信息管理系统</option>
-                                    <option value="2">猪工信息管理系统</option>
-                                    <option value="3">电商管理平台</option>
+                                    {% for d in data %}
+                                        <option value="{{ d.id }}">{{ d.name }}</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
