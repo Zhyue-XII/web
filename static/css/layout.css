@@ -13,6 +13,9 @@
         transform: scale(.8);
         transition: all .8s;
     }
+    .nav-ul a:hover{
+        color: white !important;
+    }
 
     nav{background: #f54e05}
     .nav-tel,.menu{display: none}
