@@ -5,8 +5,8 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.views import login as sys_login, logout as sys_logout
-from forum.forms.topic import TopicForm
 from forum.models import Plate, Topic, Discuss, Replay
+import base64
 
 
 @csrf_exempt
@@ -127,12 +127,13 @@ def edit_topic(request):
 @csrf_exempt
 def issue_topic(request):
     """发布帖子"""
+    pic = request.POST.get('picture')
     topic_title = request.POST.get('topic_title')
     topic_text = request.POST.get('topic_text')
     plate_name = request.POST.get('plate_name')
     user = request.user.username
     if user:
-        topic = Topic.objects.create(topic_title=topic_title, topic_text=topic_text, plate_id=plate_name)
+        topic = Topic.objects.create(topic_title=topic_title, topic_text=topic_text, plate_id=plate_name, picture=pic)
         topic.user_id = request.user
         topic.save()
         return JsonResponse({'code': 200, 'mess': 'success'})

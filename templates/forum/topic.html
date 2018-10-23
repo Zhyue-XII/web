@@ -48,7 +48,13 @@
                     <p style="color: grey">{{ data.issue_time }}</p>
                 </div>
                 <div class="topic-text">
-                    {{ data.topic_text }}
+                    <p>{{ data.topic_text }}</p>
+                    {% if data.picture == '' %}
+                        <span></span>
+                    {% else %}
+                        <div style="margin-top: 2%"> <img src="{{ data.picture }}" width="100%" alt=""></div>
+
+                    {% endif %}
                 </div>
 
                 <button class="topic-dz" style="background: none" onclick="dz({{ data.id }})"><i class="layui-icon layui-icon-praise t-dz"></i>

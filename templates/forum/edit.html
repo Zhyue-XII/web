@@ -9,44 +9,45 @@
             <ul class="layui-tab-title">
                 <li class="layui-this">发表帖子</li>
             </ul>
-            <div class="layui-tab-content" style="height: 100px;">
+            <div class="layui-tab-content">
                 <div class="layui-tab-item layui-show">
-                        <form id="frmEdit">
-                            {% csrf_token %}
-                            <div class="form-group">
-{#                                <label for="plate" class="control-label">选择板块</label>#}
-                                <div>
-                                    <select class="form-control" id="plate" name="plate">
-                                        <option value="0">===请选择所属模块===</option>
-                                        <option value="1">牛羊肉加工信息管理系统</option>
-                                        <option value="2">猪工信息管理系统</option>
-                                        <option value="3">电商管理平台</option>
-
-                                    </select>
-                                </div>
+                    <form id="frmEdit">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <div>
+                                <select class="form-control" id="plate" name="plate">
+                                    <option value="1">牛羊肉加工信息管理系统</option>
+                                    <option value="2">猪工信息管理系统</option>
+                                    <option value="3">电商管理平台</option>
+                                </select>
                             </div>
+                        </div>
 
-                            <div class="form-group">
-                                <div>
-                                    <input class="form-control" id="topic_title" name="topic_title" placeholder="请输入标题.."/>
-                                </div>
+                        <div class="form-group">
+                            <div>
+                                <input class="form-control" id="topic_title" name="topic_title" placeholder="请输入标题.."/>
                             </div>
+                        </div>
 
-                            <div class="form-group">
-                                <div>
-                                    <textarea class="form-control topic-text" id="topic_text" name="topic_text" placeholder="请输入内容"></textarea>
-                                </div>
+                        <div class="form-group">
+                            <div>
+                                <input id="picture" name="picture" type="file"/>
                             </div>
-                            <button type="button" id="edit-topic-btn" class="layui-btn"> 保存</button>
-                            <div class="form-group col-md-12">
+                        </div>
 
+                        <div class="form-group">
+                            <div>
+                                <textarea class="form-control topic-text" id="topic_text" name="topic_text"
+                                          placeholder="请输入内容"></textarea>
                             </div>
-                        </form>
+                        </div>
+
+                        <button type="button" id="edit-topic-btn" class="layui-btn"> 保存</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-
 {% endblock %}
 {% block script %}
     <script src="{% static 'js/forum/edit.js' %}"></script>

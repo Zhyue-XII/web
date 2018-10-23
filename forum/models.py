@@ -20,6 +20,7 @@ class Topic(models.Model):
     like = models.IntegerField(default=0)      # 点赞数量
     user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
     plate = models.ForeignKey(Plate, null=True, on_delete=models.SET_NULL)
+    picture = models.TextField(null=True)
 
     class Meta:
         verbose_name = '帖子管理'
