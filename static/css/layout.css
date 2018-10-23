@@ -109,7 +109,6 @@ nav ul{
 }
 .display-nav{
     display: none;
-    transition: all .8s;
 }
 @font-face {
     font-family: 'Ga';
