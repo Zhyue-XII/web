@@ -21,6 +21,12 @@
     .nav-ul li{
         padding: 10px 0;
     }
+
+    .a-block a{
+        display: block;
+        margin: 2% 0 !important;
+    }
+    .about{display: none}
 }
 @media (min-width: 768px) and (max-width: 991px){
     .scale-title{font-size: 28px !important;}
@@ -130,4 +136,15 @@ input,textarea{
     background: #32383d;
     color: grey;
     font-size: 16px;
+}
+.a-block{
+    margin-bottom: 1%;
+}
+.a-block a {
+    margin: 0 20px;
+    color: grey;
+}
+.a-block a:hover{
+    color: grey;
+    text-decoration: none;
 }
