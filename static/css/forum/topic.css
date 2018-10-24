@@ -70,10 +70,10 @@ textarea.discuss-detail {
     background: none;
     color: white;
 }
-.t-dz{
-    line-height: 22px;
-    margin-right: 5px;
+.eyes{
     float: left;
+    line-height: 24px;
+    margin-right: 5px;
 }
 .article button{
     outline: none;

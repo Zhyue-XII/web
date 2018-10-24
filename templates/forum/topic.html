@@ -32,15 +32,8 @@
             <div class="layui-card article">
                 <h1>{{ data.topic_title }}<span style="float: right; font-size: 15px"> 楼主</span></h1>
                 <div class="topic-data">
-                    {% if data.plate_id == 1 %}
-                        <a class="layui-badge layui-bg-green">牛羊</a>
-                    {% elif data.plate_id == 2 %}
-                        <a class="layui-badge">猪肉</a>
-                    {% else %}
-                        <a class="layui-badge layui-bg-blue">电商</a>
-                    {% endif %}
-{#                    <span class="layui-badge layui-bg-green fly-detail-column">讨论</span>#}
-                    <p><i class="layui-icon layui-icon-praise"> {{ data.like }} </i></p>
+                    <a class="layui-badge layui-bg-green">提问</a>
+                    <p><i class="eyes glyphicon glyphicon-eye-open"></i> {{ data.like }}</p>
                 </div>
                 <div class="detail-about">
                     <img src="{% static 'img/u.gif' %}" alt="">

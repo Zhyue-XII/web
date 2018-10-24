@@ -6,52 +6,60 @@
 {% block content %}
     <div style="padding: 20px 0" class="layui-row layui-col-space15">
          <div class="layui-col-md8">
-                <div class="layui-card">
-                    <div class="layui-card-header">问题</div>
-                    <div class="layui-card-body card-body">
-                        {% if data != '' %}
-                            {% for d in data %}
-                                <div>
-                                    <a href="#"><img src="{% static 'img/u.gif' %}" alt=""></a>
-                                    <h2>
-                                        {% if d.plate_id == 1 %}
-                                            <a class="layui-badge layui-bg-green">提问</a>
-                                        {% else %}
-                                            <a class="layui-badge">精贴</a>&nbsp;<a class="layui-badge layui-bg-green">提问</a>
-                                        {% endif %}
-                                        <a href="/forum/topic?id={{ d.id }}">{{ d.topic_title }}</a>
-                                    </h2>
-                                    <p class="info"><span style="color: black">{{ d.user__username }}</span>
-                                        <span>{{ d.issue_time }}</span>
-                                        <span style="float: right">
-                                            <a href="javascript:dz({{ d.id }})"><i class="layui-icon layui-icon-praise"></i>{{ d.like }}</a>
-                                        </span>
-                                    </p>
-                                </div>
-                            {% endfor %}
-                        {% else %}
-                            <span>没有更多了</span>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
+             <div class="layui-card">
+                 <div class="layui-card-header">问题 <span id="count">{{ count}}</span></div>
+                 <div class="layui-card-body card-body" id="topicData">
+{#                     {% if data != '' %}#}
+{#                         {% for d in data %}#}
+{#                             <div>#}
+{#                                 <a href="#"><img src="{% static 'img/u.gif' %}" alt=""></a>#}
+{#                                 <h2>#}
+{#                                     {% if d.plate_id == 1 %}#}
+{#                                         <a class="layui-badge layui-bg-green">提问</a>#}
+{#                                     {% else %}#}
+{#                                         <a class="layui-badge">精贴</a>&nbsp;<a class="layui-badge layui-bg-green">提问</a>#}
+{#                                     {% endif %}#}
+{#                                     <a href="/forum/topic?id={{ d.id }}">{{ d.topic_title }}</a>#}
+{#                                 </h2>#}
+{#                                 <p class="info"><span style="color: black">{{ d.user__username }}</span>#}
+{#                                     <span>{{ d.issue_time }}</span>#}
+{#                                     <span style="float: right">#}
+{#                                            <a href="javascript:dz({{ d.id }})">#}
+{#                                                <i class="layui-icon layui-icon-praise"></i>{{ d.like }}</a>#}
+{#                                     </span>#}
+{#                                 </p>#}
+{#                             </div>#}
+{#                         {% endfor %}#}
+{#                     {% else %}#}
+{#                         <span>没有更多了</span>#}
+{#                     {% endif %}#}
+                 </div>
+             </div>
+             <div class="layui-card more">
+                 <span id="count" style="display: none;"></span>
+                 <a href="javascript:more()">
+                     <p id="loadMore">加载更多..</p>
+                     <img src="{% static 'img/more.png' %}" width="18" alt="">
+                 </a>
+             </div>
+         </div>
 
-            <div class="layui-col-md4">
-                <div class="layui-card">
-                    <div class="layui-card-header"> 新闻公告</div>
-                    <div class="layui-card-body">
-                        牛羊肉加工信息管理系统上线<br>
-                    </div>
+        <div class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-header"> 新闻公告</div>
+                <div class="layui-card-body">
+                    牛羊肉加工信息管理系统上线<br>
                 </div>
             </div>
-            <div class="layui-col-md4">
-                <div class="layui-card">
-                    <div class="layui-card-body img-wx">
-                        <img src="{% static 'img/wx.jpg' %}" alt="">
-                        <p> 微信扫描关注我们</p>
-                    </div>
+        </div>
+        <div class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-body img-wx">
+                    <img src="{% static 'img/wx.jpg' %}" alt="">
+                    <p> 微信扫描关注我们</p>
                 </div>
             </div>
+        </div>
 
     </div>
 {% endblock %}

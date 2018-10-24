@@ -6,7 +6,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.views import login as sys_login, logout as sys_logout
 from forum.models import Plate, Topic, Discuss, Replay
-import base64
+import json
 
 
 @csrf_exempt
@@ -78,6 +78,8 @@ def post_topic(request):
     """获取文章及评论信息"""
     id = request.GET.get("id")
     data = Topic.objects.get(id=id)
+    data.like += 1
+    data.save()
     discusses = Discuss.objects.filter(topic_id=id).values('id', 'user__username', 'topic_id',
                                                            'discuss_detail', 'topic__issue_time')
     disc = []
@@ -142,18 +144,30 @@ def issue_topic(request):
 
 
 def get_topic(request):
-    """社区首页降序查询"""
+    """获取分页总记录数"""
+    count = Topic.objects.all().count()
     data = Topic.objects.all().values('id', 'topic_title', 'issue_time', 'like', 'user__username', 'plate_id').order_by(
         '-id')
-    return render(request, 'forum/forums.html', {'data': data})
+    return render(request, 'forum/forums.html', {'count': count, 'data': data})
 
 
-def like_dz(request):
-    id = request.GET.get('id')
-    topic = Topic.objects.get(id=id)
-    topic.like += 1
-    topic.save()
-    return JsonResponse({"code": 200, 'mess': '已赞'})
+@csrf_exempt
+def page_list(request):
+    """分页查询"""
+    curr = int(request.POST.get('curr'))
+    data_list = Topic.objects.all().values('id', 'topic_title', 'issue_time', 'like', 'user__username', 'plate_id').order_by(
+        '-id')[(curr-1)*8: curr * 8]
+    data = []
+    for dl in data_list:
+        data.append({
+            'id': dl['id'],
+            'title': dl['topic_title'],
+            'issue_time': dl['issue_time'],
+            'dz_number': dl['like'],
+            'author': dl['user__username'],
+            'plate': dl['plate_id']
+        })
+    return JsonResponse({'code': 200, 'data': data})
 
 
 def course(request):
