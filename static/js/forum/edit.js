@@ -48,14 +48,12 @@ $("#edit-topic-btn").click(function () {
                     return;
                 } else {
                     //执行上传操作
-                    alert(reader.result);
                     var plate_name = $("#plate").val();
                     var topic_title = $("#topic_title").val();
                     var topic_text = $("#topic_text").val();
                     var picture = reader.result;
                     var data = {'plate_name':plate_name,'topic_title': topic_title, 'topic_text':topic_text,'picture':picture}
                     $.post('issuetopic', data, function (res) {
-                        console.log(data)
                         if (res.code === 200) {
                             window.location.reload()
                         } else {

@@ -28,20 +28,15 @@ def register(request):
     username = request.POST.get("username")
     password = request.POST.get("password1")
     users = User.objects.all()
-    has_user = False
     for u in users:
         if username == u.username:
-            has_user = True
+            return JsonResponse({"code": 204, "mess": "该用户名已被注册"})
         else:
-            has_user = False
-    if has_user is False:
-        user = User.objects.create_user(username, '', password)
-        user.is_active = True
-        user.is_staff = True
-        user.save()
-        return JsonResponse({"code": 201, "mess": "注册成功"})
-    else:
-        return JsonResponse({"code": 204, "mess": "该用户名已被注册"})
+            user = User.objects.create_user(username, '', password)
+            user.is_active = True
+            user.is_staff = True
+            user.save()
+            return JsonResponse({"code": 201, "mess": "注册成功"})
 
 
 @csrf_exempt
