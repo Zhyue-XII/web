@@ -76,7 +76,7 @@
 .menu{
     text-align: center;
 }
-.logo img{width: 120px;padding: 10px 0}
+.logo img{width: 100px;height:60px;padding: 10px 0}
 .nav-tel{color: white;margin-top: 10px;text-align: right}
 .nav-tel img{margin-right: 10px}
 .nav-tel span{
@@ -120,8 +120,8 @@ nav ul{
 
 .my-btn{
     background: #f54e05;
-    width: 160px;
-    height: 45px;
+    width: 125px;
+    height: 35px;
     border-radius: 30px;
     outline: none;
     border: none;
