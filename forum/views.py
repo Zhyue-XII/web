@@ -157,7 +157,7 @@ def page_list(request):
         data.append({
             'id': dl['id'],
             'title': dl['topic_title'],
-            'issue_time': dl['issue_time'],
+            'issue_time': str(dl['issue_time']).split(' ', 1)[0],
             'dz_number': dl['like'],
             'author': dl['user__username'],
             'plate': dl['plate_id']

@@ -47,28 +47,44 @@ $("#edit-topic-btn").click(function () {
                     alert('上传失败，请上传不大于2M的图片！');
                     return;
                 } else {
-                    //执行上传操作
                     var plate_name = $("#plate").val();
                     var topic_title = $("#topic_title").val();
                     var topic_text = $("#topic_text").val();
                     var picture = reader.result;
-                    var data = {'plate_name':plate_name,'topic_title': topic_title, 'topic_text':topic_text,'picture':picture}
+                    var data = {
+                        'plate_name': plate_name,
+                        'topic_title': topic_title,
+                        'topic_text': topic_text,
+                        'picture': picture
+                    }
                     $.post('issuetopic', data, function (res) {
                         if (res.code === 200) {
-                            window.location.reload()
+                            window.location.href = '/forum'
                         } else {
                             alert(res.mess)
                         }
                     })
 
-
                 }
             }
+        } else {
+            var plate_name = $("#plate").val();
+            var topic_title = $("#topic_title").val();
+            var topic_text = $("#topic_text").val();
+            var picture = reader.result;
+            var data = {
+                'plate_name': plate_name,
+                'topic_title': topic_title,
+                'topic_text': topic_text,
+                'picture': picture
+            };
+            $.post('issuetopic', data, function (res) {
+                if (res.code === 200) {
+                    window.location.href = '/forum'
+                } else {
+                    alert(res.mess)
+                }
+            })
         }
-
-
-
-
-
     }
 })

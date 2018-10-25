@@ -9,30 +9,6 @@
              <div class="layui-card">
                  <div class="layui-card-header">问题 <span id="count">{{ count}}</span></div>
                  <div class="layui-card-body card-body" id="topicData">
-{#                     {% if data != '' %}#}
-{#                         {% for d in data %}#}
-{#                             <div>#}
-{#                                 <a href="#"><img src="{% static 'img/u.gif' %}" alt=""></a>#}
-{#                                 <h2>#}
-{#                                     {% if d.plate_id == 1 %}#}
-{#                                         <a class="layui-badge layui-bg-green">提问</a>#}
-{#                                     {% else %}#}
-{#                                         <a class="layui-badge">精贴</a>&nbsp;<a class="layui-badge layui-bg-green">提问</a>#}
-{#                                     {% endif %}#}
-{#                                     <a href="/forum/topic?id={{ d.id }}">{{ d.topic_title }}</a>#}
-{#                                 </h2>#}
-{#                                 <p class="info"><span style="color: black">{{ d.user__username }}</span>#}
-{#                                     <span>{{ d.issue_time }}</span>#}
-{#                                     <span style="float: right">#}
-{#                                            <a href="javascript:dz({{ d.id }})">#}
-{#                                                <i class="layui-icon layui-icon-praise"></i>{{ d.like }}</a>#}
-{#                                     </span>#}
-{#                                 </p>#}
-{#                             </div>#}
-{#                         {% endfor %}#}
-{#                     {% else %}#}
-{#                         <span>没有更多了</span>#}
-{#                     {% endif %}#}
                  </div>
              </div>
              <div class="layui-card more">
