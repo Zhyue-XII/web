@@ -16,7 +16,7 @@ class Plate(models.Model):
 class Topic(models.Model):
     topic_title = models.CharField(max_length=50)
     topic_text = models.TextField()
-    issue_time = models.DateTimeField(auto_now=True)     # 发布事件
+    issue_time = models.DateTimeField(auto_now=True)     # 发布时间
     like = models.IntegerField(default=0)      # 点赞数量
     user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
     plate = models.ForeignKey(Plate, null=True, on_delete=models.SET_NULL)
