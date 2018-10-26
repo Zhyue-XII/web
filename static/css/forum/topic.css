@@ -15,7 +15,7 @@
     overflow: hidden;
     padding: 2%;
 }
-.detail-about img,.qaq img{
+.detail-about img,.userImg{
     width: 50px;
     height: 50px;
     float: left;
@@ -53,9 +53,17 @@
 textarea.discuss-detail {
     width: 100%;
     min-height: 150px;
-    padding: 1%;
-    margin-bottom: 1%;
+    /*margin-bottom: 1%;*/
+    /*border: 1px solid gainsboro;*/
+    border: none;
+}
+.bodyRpy{
     border: 1px solid gainsboro;
+    padding: 1%;
+}
+#rpyImg{
+    width: 30%;
+
 }
 .replay-dialog{
     background: grey;
@@ -78,6 +86,16 @@ textarea.discuss-detail {
 .article button{
     outline: none;
     border: 0;
+}
+.tools{
+    padding: 1%;
+    border: 1px solid gainsboro;
+    border-bottom: none;
+}
+.tools a{
+    text-decoration: none;
+    padding: 1%;
+    border-right: 1px solid gainsboro;
 }
 @media (max-width: 768px) {
     .replay-dialog{

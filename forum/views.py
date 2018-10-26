@@ -76,7 +76,7 @@ def post_topic(request):
     data.like += 1
     data.save()
     discusses = Discuss.objects.filter(topic_id=id).values('id', 'user__username', 'topic_id',
-                                                           'discuss_detail', 'topic__issue_time')
+                                                           'discuss_detail', 'topic__issue_time', 'img', 'video_url')
     disc = []
     mess = ''
     if discusses:
@@ -87,6 +87,8 @@ def post_topic(request):
                 'user': d['user__username'],
                 'detail': d['discuss_detail'],
                 'time': d['topic__issue_time'],
+                'img': d['img'],
+                'url': d['video_url'],
                 'rpy': replays
             })
     else:
@@ -105,10 +107,15 @@ def post_discuss(request):
     """发表评论"""
     id = request.POST.get('id')
     discuss_detail = request.POST.get('discuss-detail')
+    link = request.POST.get('link')
+    img = request.POST.get('img')
+    print(link,id)
     user = request.user.username
     print(user)
     if user:
         discuss = Discuss.objects.create(topic_id=id, discuss_detail=discuss_detail)
+        discuss.img = img
+        discuss.video_url = link
         discuss.user_id = request.user
         discuss.save()
         return JsonResponse({'code': 200, 'mess': 'succes'})

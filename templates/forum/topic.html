@@ -4,29 +4,6 @@
     <link rel="stylesheet" href="{% static 'css/forum/topic.css' %}">
 {% endblock %}
 {% block content %}
-    <div style="position: relative">
-        <div class="replay-dialog">
-            <form id="frmReplay" class="form-horizontal">
-                {% csrf_token %}
-                <input id="discussId" type="hidden" name="discussId" value="">
-                <div class="form-group">
-                    <label for="replay" class="control-label"></label>
-                    <div class="col-sm-12">
-                      <textarea class="form-control layui-textarea" id="replay" name="replay"></textarea>
-                    </div>
-
-                </div>
-                <p align="right">
-                    <button type="button" id="btnRpy" class="layui-btn layui-btn-primary layui-btn-sm"> 保存
-                    </button>
-                    <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" id="removeRpy">
-                        取消
-                    </button>
-                </p>
-            </form>
-        </div>
-    </div>
-
     <div class="layui-row layui-col-space15" style="padding: 20px 0">
         <div class="layui-col-md8">
             <div class="layui-card article">
@@ -46,7 +23,6 @@
                         <span></span>
                     {% else %}
                         <div style="margin-top: 2%"> <img src="{{ data.picture }}" width="100%" alt=""></div>
-
                     {% endif %}
                 </div>
             </div>
@@ -60,13 +36,26 @@
                     {% if disc != '' %}
                         {% for d in disc %}
                             <div class="qaq">
-                                <img src="{% static 'img/u.gif' %}" alt="">
+                                <img class="userImg" src="{% static 'img/u.gif' %}" alt="">
                                 <p style="color: #01AAED;line-height: 25px">{{ d.user }} <span
                                         style="float: right">{{ forloop.counter }}楼</span></p>
                                 <p style="color: grey">{{ d.time }}</p>
 
                                 <div class="qa">
-                                    <p>{{ d.detail }}</p>
+                                    <div>
+                                        <p>{{ d.detail }}
+                                            {% if d.url != null %}
+                                            <a href="{{ d.url }}">{{ d.url }}</a>
+                                        {% endif %}
+                                        </p>
+                                        {% if d.img != '' %}
+                                            <img id="rpyImg" src="{{ d.img }}" alt="">
+
+                                        {% endif %}
+
+                                    </div>
+
+
                                     {% for r in d.rpy %}
                                         <div class="replay-block">
                                             <a href="#frmDiscuss" onclick="replayUser('{{ r.user__username }}')">
@@ -95,8 +84,18 @@
 
                     <form id="frmDiscuss">
                         {% csrf_token %}
-                        <input type="hidden" name="id" value="{{ id }}">
-                        <textarea name="discuss-detail" class="discuss-detail" placeholder="添加评论.."></textarea>
+                        <input type="hidden" id="id" name="id" value="{{ id }}">
+                        <p class="tools">
+                            <a href="javascript:addImg()" title="添加图片.." id="test1"><i class="layui-icon layui-icon-picture"></i></a>
+                            <a href="javascript:addUrl()" title="添加视频/图片连接.."><i class="layui-icon layui-icon-link"></i></a>
+                            <input type="file" name="picture" id="picture" style="display: none;" onchange="imgPreview(this)">
+                        </p>
+                        <div class="bodyRpy">
+                            <span class="addBlock"></span>
+                            <textarea name="discuss-detail" class="discuss-detail" id="discuss-detail" placeholder="添加评论.."></textarea>
+                        </div>
+
+
                     </form>
                     <button id="discuss-btn" class="layui-btn">提交评论</button>
                 </div>

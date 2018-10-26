@@ -34,9 +34,13 @@ class Discuss(models.Model):
     discuss_detail = models.TextField()
     user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
     topic = models.ForeignKey(Topic, null=True, on_delete=models.SET_NULL)
+    img = models.TextField(null=True)
+    video_url = models.CharField(max_length=225, null=True)
 
 
 class Replay(models.Model):
     replay_detail = models.TextField()
     discus = models.ForeignKey(Discuss, null=True, on_delete=models.SET_NULL)
     user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
+    img = models.TextField(null=True)
+    video_url = models.CharField(max_length=225, null=True)
