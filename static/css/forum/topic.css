@@ -97,6 +97,13 @@ textarea.discuss-detail {
     padding: 1%;
     border-right: 1px solid gainsboro;
 }
+.hot i{
+    color: red;
+}
+.hot a{
+    color: #22a7f1 !important;
+    text-decoration: none;
+}
 @media (max-width: 768px) {
     .replay-dialog{
         width: 92%;

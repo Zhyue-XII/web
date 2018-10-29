@@ -36,9 +36,22 @@
     color: grey;
 }
 
-.our-team-text p:first-child,.contact-title p:first-child{
+.our-team-text p:first-child{
     font-size: 32px;
     letter-spacing: 2px;
+}
+.contact-title p:first-child,.join-us p:first-child{
+    font-size: 26px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.join-us {
+    padding:5% 0;
+}
+.required{
+    border: 1px dashed #ccc;
+    margin: 3% 2% 0;
+    padding: 2%;
 }
 
 .pic-block{
@@ -54,10 +67,24 @@
     color: gray;
     margin-top: 10%;
 }
+.required p {
+    font-size: 18px;
+    color: #f54e05;
+}
 
+ol{
+    margin-left: 15px;
+}
+.btn-block{
+    text-align: center;
+    margin-top: 4%;
+}
+.btn-block button{
+    border-radius: 0 !important;
+}
 
 .contact-block{
-    background-color: #333333;
+    background-color: #555;
 }
 
 .contact-desc{
@@ -77,7 +104,12 @@
     text-align: center;
     padding: 5% 0;
 }
-
+.underline{
+    color: white;
+    border-bottom: 1px solid;
+    width: 8%;
+    margin: 0 auto;
+}
 
 @media (max-width: 768px) {
     .team-title-text p:first-child,.our-team-text p,.contact-title p:first-child{ font-size: 20px !important;}

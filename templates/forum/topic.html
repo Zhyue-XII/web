@@ -103,10 +103,17 @@
         </div>
         <div class="layui-col-md4">
             <div class="layui-card">
-                <div class="layui-card-header">卡片面板</div>
-                <div class="layui-card-body">
-                    结合 layui 的栅格系统<br>
-                    轻松实现响应式布局
+                <div class="layui-card-header">最近热门帖子</div>
+                <div class="layui-card-body hot">
+                    {% for h in hot %}
+                        <div style="overflow: hidden">
+                            <a href='topic?id={{ h.id }}'><span class="layui-badge">hot</span>&nbsp;{{ h.topic_title }}</a>
+                            <p style="float: right"><i class="layui-icon layui-icon-fire"></i> <span style="color: grey">{{ h.like }}</span></p>
+                        </div>
+
+
+
+                    {% endfor %}
                 </div>
             </div>
         </div>

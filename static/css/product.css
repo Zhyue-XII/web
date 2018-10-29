@@ -54,9 +54,12 @@
 .try-block a{
     display: block;
     text-align: center;
-    line-height: 45px;
+    line-height: 35px;
     text-decoration: none;
     margin: 0 auto;
+}
+.try-block a:active{
+    color: white;
 }
 .try-block a:hover{
     text-decoration: none;

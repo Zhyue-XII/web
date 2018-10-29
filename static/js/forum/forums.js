@@ -20,7 +20,7 @@ function more() {
             for (var i = 0; i < 8; i++) {
                 html = '<div><a href="javascript:void(0)"><img src="/static/img/u.gif" alt=""></a>' +
                     '<h2><a class="layui-badge layui-bg-green">提问</a> ' +
-                    '<a href="/forum/topic?id=' + data[i].id + '">' + data[i].title + '</a></h2><p class="info">' +
+                    '<a href="/forum/topic?id='+ data[i].id + '">' + data[i].title + '</a></h2><p class="info">' +
                     '<span style="color: black">' + data[i].author + '</span><span>' + data[i].issue_time + '</span>' +
                     '<span style="float: right;"><i class="eyes glyphicon glyphicon-eye-open"></i>' + data[i].dz_number + '</span></p>' +
                     '</div>'

@@ -49,6 +49,10 @@ h2 a:last-child{
     line-height: 24px;
     margin-right: 5px;
 }
+.news a{
+    color: #22a7f1 !important;
+}
+.news a:hover{text-decoration: none}
 @media (max-width: 768px) {
 
 }

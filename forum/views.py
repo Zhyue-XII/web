@@ -75,6 +75,8 @@ def post_topic(request):
     data = Topic.objects.get(id=id)
     data.like += 1
     data.save()
+    """获取热门帖子"""
+    hot = Topic.objects.all().order_by('-like')[0:5]
     discusses = Discuss.objects.filter(topic_id=id).values('id', 'user__username', 'topic_id',
                                                            'discuss_detail', 'topic__issue_time', 'img', 'video_url')
     disc = []
@@ -98,7 +100,8 @@ def post_topic(request):
                       'data': data,
                       'disc': disc,
                       'mess': mess,
-                      'id': id
+                      'id': id,
+                      'hot': hot
                   })
 
 
