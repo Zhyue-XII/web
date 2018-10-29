@@ -125,11 +125,9 @@ $("#btnSave").click(function () {
             if(res.code===200){
                 window.location.reload();
             }else {
-                $("#mess").html(res.mess)
-
-                $(".re").click(function () {
-                    $("#mess").html(" ")
-                });
+                $("#myModal").modal('hide');
+                $("#frmLogin").data('bootstrapValidator').resetForm();
+                layer.msg(res.mess)
             }
         })
     }
@@ -152,9 +150,11 @@ $("#btn-sub").click(function () {
     if($("#frmResister").data('bootstrapValidator').isValid()){
         $.post("/forum/register",data_list, function (res) {
             if(res.code === 204){
-                $("#message").html(res.mess)
+                $("#registerModal").modal('hide')
+                layer.msg(res.mess)
             } else {
                 $("#registerModal").modal('hide')
+                layer.msg(res.mess)
             }
         })
     }

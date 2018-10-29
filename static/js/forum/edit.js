@@ -61,7 +61,7 @@ $("#edit-topic-btn").click(function () {
                         if (res.code === 200) {
                             window.location.href = '/forum'
                         } else {
-                            alert(res.mess)
+                            layer.msg(res.mess)
                         }
                     })
 
@@ -82,7 +82,7 @@ $("#edit-topic-btn").click(function () {
                 if (res.code === 200) {
                     window.location.href = '/forum'
                 } else {
-                    alert(res.mess)
+                    layer.msg(res.mess)
                 }
             })
         }

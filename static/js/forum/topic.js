@@ -77,7 +77,7 @@ $("#discuss-btn").click(function () {
         if (data.code === 200) {
             window.location.reload()
         } else {
-            alert(data.mess)
+            layer.msg(data.mess)
         }
     })
 });

@@ -1,12 +1,11 @@
 from django.contrib.auth import authenticate
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import User
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.views import login as sys_login, logout as sys_logout
 from forum.models import Plate, Topic, Discuss, Replay
-import json
 
 
 @csrf_exempt
@@ -27,16 +26,15 @@ def logout(request):
 def register(request):
     username = request.POST.get("username")
     password = request.POST.get("password1")
-    users = User.objects.all()
-    for u in users:
-        if username == u.username:
-            return JsonResponse({"code": 204, "mess": "该用户名已被注册"})
-        else:
-            user = User.objects.create_user(username, '', password)
-            user.is_active = True
-            user.is_staff = True
-            user.save()
-            return JsonResponse({"code": 201, "mess": "注册成功"})
+    users = User.objects.filter(username=username)
+    if users is None:
+        user = User.objects.create_user(username, '', password)
+        user.is_active = True
+        user.is_staff = True
+        user.save()
+        return JsonResponse({"code": 201, "mess": "注册成功"})
+    else:
+        return JsonResponse({"code": 204, "mess": "该用户名已被注册"})
 
 
 @csrf_exempt
@@ -112,9 +110,7 @@ def post_discuss(request):
     discuss_detail = request.POST.get('discuss-detail')
     link = request.POST.get('link')
     img = request.POST.get('img')
-    print(link,id)
     user = request.user.username
-    print(user)
     if user:
         discuss = Discuss.objects.create(topic_id=id, discuss_detail=discuss_detail)
         discuss.img = img
