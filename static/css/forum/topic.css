@@ -104,6 +104,18 @@ textarea.discuss-detail {
     color: #22a7f1 !important;
     text-decoration: none;
 }
+.topic-text p,.p-indent{
+    text-indent: 2em;
+}
+.top-topic p{
+    margin-top: 1%;
+}
+#discuss-btn{
+    margin-top: 2%;
+}
+.top-topic div{
+    margin: 2% 0;
+}
 @media (max-width: 768px) {
     .replay-dialog{
         width: 92%;

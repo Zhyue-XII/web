@@ -53,6 +53,11 @@ h2 a:last-child{
     color: #22a7f1 !important;
 }
 .news a:hover{text-decoration: none}
+.a-link:hover{
+    text-decoration: none;
+    color: #009688 !important;
+}
+
 @media (max-width: 768px) {
 
 }

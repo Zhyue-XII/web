@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.views import login as sys_login, logout as sys_logout
-from forum.models import Plate, Topic, Discuss, Replay
+from forum.models import Plate, Topic, Discuss
 
 
 @csrf_exempt
@@ -26,7 +26,7 @@ def logout(request):
 def register(request):
     username = request.POST.get("username")
     password = request.POST.get("password1")
-    users = User.objects.filter(username=username)
+    users = User.objects.filter(username=username).first()
     if users is None:
         user = User.objects.create_user(username, '', password)
         user.is_active = True
@@ -51,20 +51,20 @@ def change_password(request):
         return JsonResponse({"code": 204, "mess": "密码输入错误"})
 
 
-@csrf_exempt
-def replay_discuss(request):
-    """回复评论"""
-    id = request.POST.get('discussId')
-    replay_detail = request.POST.get('replay')
-    user = request.user.username
-    if user:
-        replay = Replay.objects.create(replay_detail=replay_detail)
-        replay.user_id = request.user
-        replay.discus_id = id
-        replay.save()
-        return JsonResponse({'code': 200, 'mess': 'success'})
-    else:
-        return JsonResponse({'code': 204, 'mess': '请先登陆'})
+# @csrf_exempt
+# def replay_discuss(request):
+#     """回复评论"""
+#     id = request.POST.get('discussId')
+#     replay_detail = request.POST.get('replay')
+#     user = request.user.username
+#     if user:
+#         replay = Replay.objects.create(replay_detail=replay_detail)
+#         replay.user_id = request.user
+#         replay.discus_id = id
+#         replay.save()
+#         return JsonResponse({'code': 200, 'mess': 'success'})
+#     else:
+#         return JsonResponse({'code': 204, 'mess': '请先登陆'})
 
 
 def post_topic(request):
@@ -81,7 +81,6 @@ def post_topic(request):
     mess = ''
     if discusses:
         for d in discusses:
-            replays = Replay.objects.filter(discus_id=d['id']).values('user__username', 'replay_detail', 'user_id')
             disc.append({  # 转化数据格式
                 'id': d['id'],
                 'user': d['user__username'],
@@ -89,7 +88,6 @@ def post_topic(request):
                 'time': d['topic__issue_time'],
                 'img': d['img'],
                 'url': d['video_url'],
-                'rpy': replays
             })
     else:
         mess = '暂无评论'
@@ -146,9 +144,9 @@ def issue_topic(request):
 
 def get_topic(request):
     """获取分页总记录数"""
-    count = Topic.objects.all().count()
-    data = Topic.objects.all().values('id', 'topic_title', 'issue_time', 'like', 'user__username', 'plate_id').order_by(
-        '-id')
+    count = Topic.objects.filter().exclude(user_id=2).count()
+    """置顶帖子"""
+    data = Topic.objects.filter(user_id=2).values('id', 'topic_title', 'issue_time', 'like', 'user__username', 'plate_id')
     return render(request, 'forum/forums.html', {'count': count, 'data': data})
 
 
@@ -156,7 +154,7 @@ def get_topic(request):
 def page_list(request):
     """分页查询"""
     curr = int(request.POST.get('curr'))
-    data_list = Topic.objects.all().values('id', 'topic_title', 'issue_time', 'like', 'user__username', 'plate_id').order_by(
+    data_list = Topic.objects.filter().exclude(user_id=2).values('id', 'topic_title', 'issue_time', 'like', 'user__username', 'plate_id').order_by(
         '-id')[(curr-1)*8: curr * 8]
     data = []
     for dl in data_list:

@@ -1,20 +1,20 @@
-function replayMess(id){
-    layer.prompt({title: '回复', formType: 2, shade: 0}, function (text, index) {
-        if(text == ''){
-            //pass
-        }else {
-            layer.close(index);
-            var data = {'discussId':id,'replay':text}
-            $.post('relaydiscuss', data, function (ret) {
-                if (ret.code === 200) {
-                    window.location.reload()
-                } else {
-                    layer.msg(ret.mess)
-                }
-            })
-        }
-    });
-};
+// function replayMess(id){
+// //     layer.prompt({title: '回复', formType: 2, shade: 0}, function (text, index) {
+// //         if(text == ''){
+// //             //pass
+// //         }else {
+// //             layer.close(index);
+// //             var data = {'discussId':id,'replay':text}
+// //             $.post('relaydiscuss', data, function (ret) {
+// //                 if (ret.code === 200) {
+// //                     window.location.reload()
+// //                 } else {
+// //                     layer.msg(ret.mess)
+// //                 }
+// //             })
+// //         }
+// //     });
+// // };
 
 function replayUser(name) {
     console.log(name)

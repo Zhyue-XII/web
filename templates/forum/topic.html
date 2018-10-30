@@ -18,13 +18,73 @@
                     <p style="color: grey">{{ data.issue_time }}</p>
                 </div>
                 <div class="topic-text">
-                    <p>{{ data.topic_text }}</p>
+                    <p class="p-indent">{{ data.topic_text }}</p>
                     {% if data.picture == '' %}
                         <span></span>
                     {% else %}
                         <div style="margin-top: 2%"> <img src="{{ data.picture }}" width="100%" alt=""></div>
                     {% endif %}
+                     {% if data.id == 1 %}
+                         <div class="top-topic">
+                             <p>接下来设置收购品种以及价格区间，点击收购下的子菜单品种管理，添加收购品种以及价格区间即可。至此系统初始化完毕。</p>
+                         </div>
+                     {% elif data.id == 3 %}
+                        <div class="top-topic">
+                            <p>称重</p>
+                            <p>届时将有我们的工作人员把轨道称和系统连接在一起，称重时，传感器将把称重数据传入系统，当称重数据稳定 不再闪烁时，
+                                点击称重，即可过第一磅称，再次点击过第二次...直到一个人称重完成，填写收购人信息之后， 点击提交或者提交并打印，
+                                连接打印机即可打印收购单。如果称重过程中有意外发生，比如到了第四称的时候出现 停电之类的中断操作，之前的称重
+                                记录将保存在收购列表中，记为暂存状态。点击称重，将继续上次中断的地方继续称重。如果 称重完成，则是处于未结算
+                                或者已结算状态，同时收购列表还可以查询每个人的收购信息。</p>
+                            <div><img src="{% static 'img/sglist.png' %}" width="100%" alt=""></div>
+
+                            <p>结算</p>
+                            <p>称重完成之后即可去会计哪里算账，系统内数据共享，会计核对收购信息给予结算，结算结果系统已经计算完毕，显示结算总金额
+                                会计可以选择一次性结清，也可以选择分期结算，结算结果将被系统记录，结算完毕可以打印结算单。
+                            </p>
+                            <div><img src="{% static 'img/jiesuan.png' %}" width="100%" alt=""></div>
+
+                            <p>查询</p>
+                            <p>
+                                收购完成之后所有人的信息都会被统计在一张大表中，表的上面可以输入查询条件，可以根据羊的品种来查询，也可以输入客户名字
+                                查询，还可以根据时间段来查询。
+                            </p>
+                            <div>
+                                <img src="{% static 'img/chaxun.png' %}" width="100%" alt="">
+                            </div>
+
+                            <p>生产</p>
+                            <p>
+                                系统在生产环节主要对排酸冷却做了监控，实施人员会将风速传感器器，温度传感器，以及风速传感器连入系统，工作人员可在
+                                硬件控制器上设置排酸时间，风速，以及温度，湿度的控制，系统将数据分析，提供最佳排酸时间，温度，以及湿度控制数据参数，
+                                将排酸的损耗降至最低。
+                            </p>
+
+                            <p>4.进销存</p>
+                            <p>产品入库</p>
+                            <p>点击进销存进入产品页面，添加产品分类，然后添加产品，完成后系统会为该产品生成产品编号，条形码，等信息。系统会连接扫描枪
+                            入库时，只需要扫描产品包装上面的条形码即可获取一切关于该产品的信息。以经入库的产品信息会在同界面的入库列表中，输入查询条件
+                                即可查询相关的产品信息。同时还可以第三方进货，点击进入进货页面，添加供货单位，以及进货的产品信息，即可录入进货信息。
+                            同理，退货也是输入供货单位，添加退货信息，如果退货种类多，点击加号可以增加一栏输入框，退货信息以及退货金额系统已经计算好
+                                同时，退货信息也将被系统记录。
+                            </p>
+                            <div><img src="{% static 'img/jinghuo.png' %}" width="100%" alt=""></div>
+                            <p>销售</p>
+                            <p>销售功能上和进货一样，可添加销售商，向销售商供应商品，同时库存量会减少，如果销售商提出退或换货要求，收到货之后录入信息
+                            退回的货物将再次添加到库存之中，以便下次销售。</p>
+                            <p> 仓库 </p>
+                            <p> 仓库有仓库管理，盘库，调拨，报损等。点击仓库管理，添加仓库，可以添加多个仓库，具体根据各自公司情况而定，仓库设有状态，
+                            停用和启用状态，停用状态不可入库，也不可出库。盘库即是对各个仓库的货物情况做一个汇总，对各产品的数量的统计。可以修改库存
+                                预警数量当货物达到预警数量时，系统给与提醒供货即将不足，以便对公司造成损失，调拨是各个仓库之间的货物交换情况的统计，
+                            比如一号仓库向二号仓库调了20件货物，以便于即时更新各个仓库的库存数量。报损是对于仓库损坏的货物进行上报，待审核人员审核之后
+                            ，更新数据。</p>
+                            <div><img src="{% static 'img/cangk.png' %}" width="100%" alt=""></div>
+
+                            <p>此外，系统还对收购数据，入库数据，出库数据做了统计分析，用表格和统计图的形式直观表现出来。可以给决策着做一些数据的参考。</p></br>
+                        </div>
+                     {% endif %}
                 </div>
+
             </div>
 
             <div class="layui-card article">
@@ -43,31 +103,30 @@
 
                                 <div class="qa">
                                     <div>
-                                        <p>{{ d.detail }}
+                                        <p>
+                                            {{ d.detail }}
                                             {% if d.url != null %}
-                                            <a href="{{ d.url }}">{{ d.url }}</a>
-                                        {% endif %}
+                                                <a style="color: #1b9dec" href="{{ d.url }}">{{ d.url }}</a>
+                                            {% endif %}
                                         </p>
                                         {% if d.img != '' %}
                                             <img id="rpyImg" src="{{ d.img }}" alt="">
-
                                         {% endif %}
-
                                     </div>
 
+{#                                    {% for r in d.rpy %}#}
+{#                                        <div class="replay-block">#}
+{#                                            <a href="#frmDiscuss" onclick="replayUser('{{ r.user__username }}')">#}
+{#                                                <span>{{ r.user__username }}</span>回复<span>{{ d.user }}</span>:#}
+{#                                                {{ r.replay_detail }} </a>#}
+{#                                        </div>#}
+{#                                    {% endfor %}#}
 
-                                    {% for r in d.rpy %}
-                                        <div class="replay-block">
-                                            <a href="#frmDiscuss" onclick="replayUser('{{ r.user__username }}')">
-                                                <span>{{ r.user__username }}</span>回复<span>{{ d.user }}</span>:
-                                                {{ r.replay_detail }} </a>
-                                        </div>
-                                    {% endfor %}
                                     <div class="dz">
                                         <a href="">
                                             <i class="glyphicon glyphicon glyphicon-thumbs-up"></i><span>点赞</span>
                                         </a>
-                                        <a href="#" onclick="replayMess({{ d.id }})" data-toggle="modal" data-target="#replayModal">
+                                        <a href="#" onclick="replayUser('{{ d.user }}')" data-toggle="modal" data-target="#replayModal">
                                             <i class="glyphicon glyphicon glyphicon glyphicon-leaf"></i><span>评论</span>
                                         </a>
                                     </div>
@@ -78,10 +137,8 @@
                         <p>暂无评论</p>
                     {% endif %}
                     <p>{{ mess }}</p>
-
                 </div>
                 <div class="discuss">
-
                     <form id="frmDiscuss">
                         {% csrf_token %}
                         <input type="hidden" id="id" name="id" value="{{ id }}">
@@ -94,8 +151,6 @@
                             <span class="addBlock"></span>
                             <textarea name="discuss-detail" class="discuss-detail" id="discuss-detail" placeholder="添加评论.."></textarea>
                         </div>
-
-
                     </form>
                     <button id="discuss-btn" class="layui-btn">提交评论</button>
                 </div>
@@ -110,9 +165,6 @@
                             <a href='topic?id={{ h.id }}'><span class="layui-badge">hot</span>&nbsp;{{ h.topic_title }}</a>
                             <p style="float: right"><i class="layui-icon layui-icon-fire"></i> <span style="color: grey">{{ h.like }}</span></p>
                         </div>
-
-
-
                     {% endfor %}
                 </div>
             </div>

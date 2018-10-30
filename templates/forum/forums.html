@@ -7,10 +7,30 @@
     <div style="padding: 20px 0" class="layui-row layui-col-space15">
          <div class="layui-col-md8">
              <div class="layui-card">
+                 <div class="layui-card-header"> 置顶 | 精贴</div>
+                 <div class="layui-card-body card-body">
+                     {% for d in data %}
+                         <div>
+                             <a href="javascript:void(0)"><img src="{% static 'img/u.gif' %}" alt=""></a>
+                             <h2><a class="layui-badge layui-bg-green">提问</a>&nbsp;<a class="layui-badge">精贴</a>
+                                <a class="a-link" href="/forum/topic?id={{ d.id }}">{{ d.topic_title }}</a>
+                             </h2>
+                             <p class="info">
+                                 <span style="color: black">{{ d.user__username }}</span>
+                                 <span>{{ d.issue_time }}</span>
+                                 <span style="float: right;"><i class="eyes glyphicon glyphicon-eye-open"></i>{{ d.like }}</span></p>
+                         </div>
+                     {% endfor %}
+
+                 </div>
+             </div>
+
+             <div class="layui-card">
                  <div class="layui-card-header">问题 <span id="count">{{ count}}</span></div>
                  <div class="layui-card-body card-body" id="topicData">
                  </div>
              </div>
+
              <div class="layui-card more">
                  <span id="count" style="display: none;"></span>
                  <a href="javascript:more()">
