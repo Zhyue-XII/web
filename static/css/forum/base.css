@@ -72,6 +72,12 @@ dd a{
     color: white;
     text-decoration: none;
 }
+.footer{
+    border-top: 1px solid gainsboro;
+    padding: 2%;
+    text-align: center;
+    margin-top: 2%;
+}
 
 @media (max-width: 768px) {
     .menu{
