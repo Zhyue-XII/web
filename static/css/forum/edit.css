@@ -15,11 +15,14 @@
 .form-control{
     border-radius: 0 !important;
 }
+#addImg {
+    color: #393D49;
+}
+#addImg:hover{
+    text-decoration: none;
+}
 @media (max-width: 768px) {
     .pd{
         margin-bottom: 2%;
-    }
-    .edit-topic{
-        height: 590px;
     }
 }

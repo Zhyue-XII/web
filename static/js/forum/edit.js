@@ -31,6 +31,9 @@ $(function () {
         },
     })
 });
+function imgClick(){
+    $('#picture').click()
+}
 
 $("#edit-topic-btn").click(function () {
     $("#frmEdit").bootstrapValidator('validate');
