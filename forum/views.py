@@ -46,7 +46,7 @@ def change_password(request):
     if user:
         user.password = make_password(psd)
         user.save()
-        return JsonResponse({"code": 200, "mess": "success"})
+        return JsonResponse({"code": 200, "mess": "修改成功"})
     else:
         return JsonResponse({"code": 204, "mess": "密码输入错误"})
 

@@ -22,28 +22,27 @@
                 <div class="title-block">
                     <a style="color: white;text-decoration: none" href="/"> <span>问答</span> </a>
                 </div>
-
-                <div class="login-block">
-                    <ul style="float: right">
-                        <li id="sel-block"><span class="hello">你好，</span>
+                <ul class="layui-nav bg-clean" lay-filter="">
+                    <li class="layui-nav-item">
+                        <a href="javascript:void(0)">
                             {% if user.username %}
-                                <a href="#" style="color: white">{{ user.username }}</a>
+                                <a href="#" style="color: white">欢迎,{{ user.username }}</a>
                             {% else %}
-                                <a href="#" style="color: white"> 请登录 </a>
+                                <a href="#" style="color: white">您好,请登录 </a>
                             {% endif %}
-                            <b class="caret"></b>
-                            <ul class="options" id="sel-option">
-                                {% if user.username %}
-                                    <li><a href="#" data-toggle="modal" data-target="#changePsd">修改密码</a></li>
-                                    <li><a href="javascript:logout()">注销</a></li>
-                                {% else %}
-                                    <a href="#" data-toggle="modal" data-target="#myModal">登陆</a>
-                                    <li><a href="#" data-toggle="modal" data-target="#registerModal">注册</a></li>
-                                {% endif %}
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+                        </a>
+                        <dl class="layui-nav-child">
+                            {% if user.username %}
+                                <dd><a href="#" data-toggle="modal" data-target="#changePsd">修改密码</a></dd>
+                                <dd><a href="javascript:logout()">注销</a></dd>
+                            {% else %}
+                                <dd><a href="#" data-toggle="modal" data-target="#myModal">登陆</a></dd>
+                                <dd><a href="#" data-toggle="modal" data-target="#registerModal">注册</a></dd>
+                            {% endif %}
+                        </dl>
+                    </li>
+                </ul>
+
             </div>
         </div>
     </nav>
@@ -170,7 +169,6 @@
                                 <input class="form-control" id="password4" name="password2" value="" type="password">
                             </div>
                         </div>
-                         <p style="text-align: center"><span id="res" style="color: #a94442"></span></p>
                         <p style="text-align: right"><button type="button" id="btn-psd" class="layui-btn"> 提交 </button></p>
                     </form>
                 </div>
@@ -189,6 +187,9 @@
     $("#sel-option").mouseleave(function () {
         $("#sel-option").css({"display": "none"})
     })
+    layui.use('element', function () {
+        var element = layui.element;
+    });
 </script>
 <script src="{% static 'js/forum/base.js' %}"></script>
 {% block script %}

@@ -150,10 +150,10 @@ $("#btn-sub").click(function () {
     if($("#frmResister").data('bootstrapValidator').isValid()){
         $.post("/forum/register",data_list, function (res) {
             if(res.code === 204){
-                $("#registerModal").modal('hide')
+                $("#registerModal").modal('hide');
                 layer.msg(res.mess)
             } else {
-                $("#registerModal").modal('hide')
+                $("#registerModal").modal('hide');
                 layer.msg(res.mess)
             }
         })
@@ -165,9 +165,12 @@ $("#btn-psd").click(function () {
     if($("#frmPsd").data('bootstrapValidator').isValid()){
         $.post('changePsd',$("#frmPsd").serialize(),function (res) {
           if(res.code === 200){
-              $("#changePsd").modal('hide')
+              $("#changePsd").modal('hide');
+              layer.msg(res.mess)
           } else {
-              $("#res").html(res.mess)
+              $("#changePsd").modal('hide');
+              layer.msg(res.mess)
+              $("#frmPsd").data('bootstrapValidator').resetForm();
           }
         })
     }

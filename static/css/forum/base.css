@@ -12,7 +12,7 @@ nav{
 }
 .title-block{
     font-size: 27px;
-    line-height: 50px;
+    line-height: 60px;
 }
 .title-block{
     float: left;
@@ -52,41 +52,32 @@ nav{
     padding: 0 15px;
 }
 option a{color: black !important;}
-
-.nav-group{position: relative}
+.bg-clean{
+    background: none !important;
+    text-align: right;
+    padding: 0 !important;
+}
+dd a{
+    padding: 6px 20px !important;
+    text-align: center;
+}
+.layui-nav-item a:hover{
+    text-decoration: none;
+}
 
 @media (max-width: 768px) {
-    nav {
-        background: #f54e05;
+    .menu{
+        padding: 0 10px;
     }
-    .title-block {
-        /*display: none;*/
-        float: left;
-    }
-
-    .menu li {
-        /*display: block;*/
-        padding: 0 0 !important;
-    }
-    .login-block{
-        float: right;
-    }
-
-    .modal-content {
-        margin-top: 50%;
-    }
-    .hello{display: none}
-    .options li{
-        padding: 0 !important;
+    .menu li{
+        margin-right: 10% !important;
     }
 }
 @media (min-width: 768px) and (max-width: 991px){
-    nav {
-        background: #f54e05;
+    .menu{
+        padding: 0 10px;
     }
 }
 @media (min-width: 991px) {
-    /*.login-block ul{*/
-        /*display: none;*/
-    /*}*/
+
 }
