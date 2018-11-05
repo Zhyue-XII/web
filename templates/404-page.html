@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'layui/css/layui.css' %}">
+    <style>
+    .error{
+        margin-top: 60px;
+        padding: 18% 2%;
+    }
+    span{margin-left: 2%}
+    @media (max-width: 768px) {
+        .icon404{font-size: 120px}
+        span{
+            font-size: 20px;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 991px){
+
+        .icon404{font-size: 180px}
+        span{
+            font-size: 25px;
+        }
+    }
+    @media (min-width: 991px) {
+        .icon404{font-size: 250px}
+        span{
+            font-size: 25px;
+        }
+    }
+    </style>
+{% endblock %}
+{% block script %}
+    <script src="{% static 'layui/layui.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="container">
+            <div class="error">
+                <i class="layui-icon layui-icon-face-surprised icon404"></i>
+                <span>呀！！出错了....</span>
+            </div>
+        </div>
+    </div>
+{% endblock %}

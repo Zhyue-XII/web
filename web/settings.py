@@ -23,7 +23,7 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
 SECRET_KEY = '@32#72+xeml5f8r3-0edoey1gklk(=kt!pg$nn4*j@q4d4@8ni'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -129,6 +129,5 @@ from machina import MACHINA_MAIN_STATIC_DIR
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
-    MACHINA_MAIN_STATIC_DIR,
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")

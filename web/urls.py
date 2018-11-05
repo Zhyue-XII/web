@@ -30,5 +30,8 @@ urlpatterns = [
     path('project/', TemplateView.as_view(template_name='project01.html')),
     path('price/', TemplateView.as_view(template_name='price.html')),
     path('forum/', include(forum_urls)),
-    path('contact/',  include(contact_urls))
+    path('contact/',  include(contact_urls)),
 ]
+
+handler404 = TemplateView.as_view(template_name='404-page.html')
+handler500 = TemplateView.as_view(template_name='404-page.html')
