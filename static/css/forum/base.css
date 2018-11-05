@@ -86,6 +86,9 @@ dd a{
     .menu li{
         margin-right: 10% !important;
     }
+    .footer{
+        padding: 10% 0;
+    }
 }
 @media (min-width: 768px) and (max-width: 991px){
     .menu{

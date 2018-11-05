@@ -131,4 +131,4 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
     MACHINA_MAIN_STATIC_DIR,
 ]
-# STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")

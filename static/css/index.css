@@ -18,13 +18,14 @@
      .text{width: 100% !important;text-align: center;}
      .img-box{display: none}
      .text a{margin: 5% auto}
-     .text p{font-size: 25px !important;}
+     .text p{font-size: 25px !important;padding: 0 10%;}
      .text span{display: none}
      .dp-block-text{margin: 20px 5% !important;}
      .act{padding-top: 27% !important;}
      .nav-ul a:hover{color: white !important;}
      .control-label{display: none}
      .new-text p {font-size: 15px !important;}
+     .cm-text{margin-top: 25px;}
 }
 @media (min-width: 768px) and (max-width: 991px) {
     .bg-service{

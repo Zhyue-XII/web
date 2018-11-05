@@ -113,7 +113,7 @@ $("#sbm-btn").click(function () {
     if($("#frm-data").data('bootstrapValidator').isValid()){
         console.log(data_list)
         $.get('/contact',data_list,function (data) {
-            alert(data)
+            layer.msg('提交成功!')
             $("#frm-data").data("bootstrapValidator").resetForm();
             $("#name").val("");
             $("#tel").val("");
