@@ -12,8 +12,17 @@
                      {% for d in data %}
                          <div>
                              <a href="javascript:void(0)"><img src="{% static 'img/u.gif' %}" alt=""></a>
-                             <h2><a class="layui-badge layui-bg-green">提问</a>&nbsp;<a class="layui-badge">精贴</a>
-                                <a class="a-link" href="/forum/topic?id={{ d.id }}">{{ d.topic_title }}</a>
+                             <h2>
+                                 {% if d.plate_id == 1 %}
+                                     <a class="layui-badge layui-bg-green">提问</a>
+                                 {% elif d.plate_id == 2 %}
+                                     <a class="layui-badge layui-bg-green">提问</a>
+                                    <a class="layui-badge layui-bg-blue">讨论</a>
+                                 {% else %}
+                                     <a class="layui-badge layui-bg-orange">回答</a>
+                                 {% endif %}
+                                 <a class="layui-badge">精贴</a>
+                                 <a class="a-link" href="/forum/topic?id={{ d.id }}">{{ d.topic_title }}</a>
                              </h2>
                              <p class="info">
                                  <span style="color: black">{{ d.user__username }}</span>

@@ -72,6 +72,10 @@
     .try-block span{display: block;text-align: center !important;}
     .p-name{font-size: 16px !important;}
     ol{margin-left: 6% !important;}
+    .p-title-bg{
+        background-position-x: -300px;
+        background-position-y: 20px;
+    }
 }
 @media (min-width: 768px) and (max-width: 991px){
     .font-style{ font-size: 25px !important;}

@@ -11,7 +11,6 @@
     padding: 2% 0;
 }
 .news{
-    min-height: 500px;
     background: white;
     padding: 5% 5%;
 }
@@ -33,13 +32,7 @@
     margin-right: 10%;
     color: gainsboro;
 }
-a:hover .news-block{
-    background: #f54e05;
-    color: white;
-    text-decoration: none;
-    padding: 2% 0;
-    transition: .8s;
-}
+
 a:hover{
     text-decoration: none !important;
 }
@@ -54,4 +47,19 @@ a:hover{
        text-align: left !important;
    }
     .case-block{padding: 0 !important;}
+    .day{font-size: 3em !important;}
+    .case-title{
+        background-position-x: -230px;
+        background-position-y: 25px;
+    }
+}
+@media (min-width: 768px) {
+    a:hover .news-block {
+        background: #f54e05;
+        color: white;
+        text-decoration: none;
+        padding: 2% 0;
+        transition: .8s;
+    }
+    .news{min-height: 500px}
 }
