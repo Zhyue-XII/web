@@ -79,21 +79,7 @@
         margin-top: 80% !important;
     }
 }
-/*main-page*/
-/*.bg1,.bg2,.bg3{*/
-    /*background-size: cover;*/
-    /*height: 550px;*/
-/*}*/
-/*.bg1{*/
-    /*background-image: url("../img/1.jpg");*/
-/*}*/
-/*.bg2{*/
-   /*background-image: url("../img/2.jpg");*/
-/*}*/
-/*.bg3{*/
-   /*background-image: url("../img/3.jpg");*/
-/*}*/
-/*.item img{min-height: 550px}*/
+
 .item img{
     min-height: 622px;
 }
