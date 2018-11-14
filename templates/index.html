@@ -11,22 +11,11 @@
 {% endblock %}
 {% block content %}
 
-    <div class="index-pic" style="min-height: 500px;position: absolute;z-index: -1">
-        <div id="myCarousel" class="carousel cl-bg" data-ride="carousel" data-interval="5000">
-            <div class="carousel-inner">
-                <div class="active item ">
-{#                    <div class="bg1"></div>#}
-                    <img src="http://phuv0ui0h.bkt.clouddn.com/1.jpg">
-                </div>
-                <div class="item">
-{#                    <div class="bg2"></div>#}
-                    <img src="http://phuv0ui0h.bkt.clouddn.com/2.jpg">
-                </div>
-                <div class="item">
-{#                   <div class="bg3"></div>#}
-                    <img src="http://phuv0ui0h.bkt.clouddn.com/3.jpg">
-                </div>
-            </div>
+    <div class="layui-carousel" id="test1" lay-filter="test1" style="position: absolute;z-index: -1">
+        <div carousel-item="">
+            <div><img src="http://phuv0ui0h.bkt.clouddn.com/1.jpg"></div>
+            <div><img src="http://phuv0ui0h.bkt.clouddn.com/2.jpg"></div>
+            <div><img src="http://phuv0ui0h.bkt.clouddn.com/3.jpg"></div>
         </div>
     </div>
 
@@ -283,4 +272,5 @@
             $(".img-box").css({"transform": "rotateY(360deg)"})
         })
     </script>
+    <script src="{% static 'js/index0.js' %}"></script>
 {% endblock %}
