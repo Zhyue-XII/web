@@ -81,9 +81,7 @@
 }
 #test1 img{width: 100%;min-height: 662px;min-width: 800px}
 .cover-bg{background: rgba(51,60,63,0.7);padding-top: 60px}
-.text,.img-box{
-    float: left;
-}
+.text,.img-box{float: left;}
 .text{
     width: 60%;
     color: rgb(211,211,211);

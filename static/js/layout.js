@@ -92,7 +92,7 @@ $("#last").click(function () {
     $("#last").css({background: '#f54e058c'})
     $("#first").css({background: 'gainsboro'})
     $("#next").css({background: 'gainsboro'})
-})
+});
 
 
 $("#try-btn").click(function () {
@@ -122,4 +122,4 @@ $("#sbm-btn").click(function () {
             $("#email").val("");
         })
     }
-})
+});
